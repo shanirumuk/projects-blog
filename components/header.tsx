@@ -15,7 +15,7 @@ export function Header() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <User className="h-4 w-4" />
           </div>
-          <span className="font-bold text-lg">Your Name</span>
+          <span className="font-bold text-lg">Shanise Mukwashi</span>
           <Badge variant="secondary" className="ml-2">Portfolio</Badge>
         </Link>
 
@@ -75,19 +75,19 @@ export function Header() {
         {/* Social Links & Contact */}
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+            <Link href="https://linkedin.com/in/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="mailto:your.email@example.com">
+            <Link href="mailto:shanirumuk@gmail.com">
               <Mail className="h-4 w-4" />
               <span className="sr-only">Email</span>
             </Link>

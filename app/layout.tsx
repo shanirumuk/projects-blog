@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   description: "A showcase of my projects, technical skills and development journey",
   keywords: ["portfolio", "projects", "software development", "full-stack", "web development"],
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  authors: [{ name: "Shanise Ruvimbo Mukwashi" }],
+  creator: "Shanise Ruvimbo Mukwashi",
   openGraph: {
     type: "website",
     locale: "en_US",

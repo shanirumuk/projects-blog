@@ -7,21 +7,21 @@ import { ArrowRight, Code, Database, Globe, Smartphone, Terminal, Zap } from "lu
 export default function Home() {
   const featuredProjects = [
     {
-      id: "ecommerce-platform",
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL",
-      image: "/placeholder-project-1.jpg",
-      tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      id: "vibi-clerk-authentication-system",
+      title: "ViBI Aviation User Management - Clerk",
+      description: "Enterprise-grade authentication system for aviation industry with multi-tenant support",
+      image: "/projects/vibi-clerk-dashboard.jpg",
+      tags: ["Next.js 14", "Clerk", "Supabase", "PostgreSQL"],
       category: "web",
       featured: true,
     },
     {
-      id: "task-management-app",
-      title: "Task Management App",
-      description: "Real-time collaboration tool with React Native and Firebase",
-      image: "/placeholder-project-2.jpg",
-      tags: ["React Native", "Firebase", "TypeScript"],
-      category: "mobile",
+      id: "vibi-supertokens-authentication-system",
+      title: "ViBI Aviation User Management - SuperTokens",
+      description: "Self-hosted authentication migration for Russian market compliance (3-week timeline)",
+      image: "/projects/vibi-supertokens-dashboard.jpg",
+      tags: ["SuperTokens", "Self-Hosted", "PostgreSQL", "Redis"],
+      category: "web",
       featured: true,
     },
     {
@@ -54,8 +54,8 @@ export default function Home() {
             <span className="block text-primary">One Project at a Time</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            I'm a passionate full-stack developer who loves creating innovative web and mobile applications. 
-            Explore my projects to see how I transform ideas into reality.
+            I'm a passionate full-stack developer specializing in enterprise authentication systems and multi-tenant architectures. 
+            Explore my projects to see how I solve complex technical challenges in mission-critical applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>

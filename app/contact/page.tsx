@@ -18,9 +18,9 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      value: "your.email@example.com",
+      value: "shanirumuk@gmail.com",
       description: "Best for detailed project discussions",
-      href: "mailto:your.email@example.com",
+      href: "mailto:shanirumuk@gmail.com",
       available: "Always available"
     },
     {
@@ -42,9 +42,9 @@ export default function ContactPage() {
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "Your Name",
+      value: "Shanise Mukwashi",
       description: "Professional networking",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/shanise-mukwashi",
       available: "Professional profile"
     },
   ];

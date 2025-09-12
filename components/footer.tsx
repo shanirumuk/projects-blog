@@ -13,7 +13,7 @@ export function Footer() {
           {/* Brand & Description */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg font-semibold">Your Name</h3>
+              <h3 className="text-lg font-semibold">Shanise Ruvimbo Mukwashi</h3>
               <p className="text-sm text-muted-foreground mt-2">
                 Full-stack developer passionate about creating innovative solutions 
                 and sharing knowledge through detailed project documentation.
@@ -21,19 +21,19 @@ export function Footer() {
             </div>
             <div className="flex space-x-2">
               <Button variant="outline" size="icon" asChild>
-                <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
                   <span className="sr-only">GitHub</span>
                 </Link>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                <Link href="https://linkedin.com/in/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <Link href="mailto:your.email@example.com">
+                <Link href="mailto:shanirumuk@gmail.com">
                   <Mail className="h-4 w-4" />
                   <span className="sr-only">Email</span>
                 </Link>
@@ -90,7 +90,7 @@ export function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear} Shanise Ruvimbo Mukwashi. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Built with <Heart className="h-3 w-3 text-red-500" /> using Next.js & shadcn/ui
