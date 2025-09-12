@@ -1,103 +1,180 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Code, Database, Globe, Smartphone, Terminal, Zap } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredProjects = [
+    {
+      id: "ecommerce-platform",
+      title: "E-Commerce Platform",
+      description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL",
+      image: "/placeholder-project-1.jpg",
+      tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+      category: "web",
+      featured: true,
+    },
+    {
+      id: "task-management-app",
+      title: "Task Management App",
+      description: "Real-time collaboration tool with React Native and Firebase",
+      image: "/placeholder-project-2.jpg",
+      tags: ["React Native", "Firebase", "TypeScript"],
+      category: "mobile",
+      featured: true,
+    },
+    {
+      id: "ai-chatbot",
+      title: "AI Customer Service Bot",
+      description: "Intelligent chatbot using OpenAI API and Python FastAPI",
+      image: "/placeholder-project-3.jpg",
+      tags: ["Python", "FastAPI", "OpenAI", "Redis"],
+      category: "api",
+      featured: true,
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const skills = [
+    { icon: Globe, name: "Web Development", description: "React, Next.js, Vue.js" },
+    { icon: Smartphone, name: "Mobile Development", description: "React Native, Flutter" },
+    { icon: Database, name: "Backend & APIs", description: "Node.js, Python, PostgreSQL" },
+    { icon: Code, name: "Languages", description: "TypeScript, JavaScript, Python" },
+    { icon: Terminal, name: "DevOps", description: "Docker, AWS, CI/CD" },
+    { icon: Zap, name: "Tools & Frameworks", description: "Git, Figma, Testing" },
+  ];
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {/* Hero Section */}
+      <section className="text-center py-20">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+            Building Digital Solutions
+            <span className="block text-primary">One Project at a Time</span>
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            I'm a passionate full-stack developer who loves creating innovative web and mobile applications. 
+            Explore my projects to see how I transform ideas into reality.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link href="/projects">
+                View My Projects <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/about">Learn About Me</Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my technical skills and problem-solving abilities.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredProjects.map((project) => (
+            <Card key={project.id} className="group hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-md mb-4 flex items-center justify-center">
+                  <Code className="h-12 w-12 text-muted-foreground" />
+                </div>
+                <CardTitle className="line-clamp-1">{project.title}</CardTitle>
+                <CardDescription className="line-clamp-2">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <Badge key={tag} variant="secondary" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <Badge variant="outline" className="text-xs">
+                      +{project.tags.length - 3} more
+                    </Badge>
+                  )}
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button variant="ghost" className="w-full group-hover:bg-accent" asChild>
+                  <Link href={`/projects/${project.id}`}>
+                    View Details <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button variant="outline" asChild>
+            <Link href="/projects">
+              View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Skills Overview */}
+      <section className="py-16 bg-muted/50 rounded-lg">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Skills & Technologies</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive overview of the technologies and skills I've developed through my projects.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skill) => (
+            <div key={skill.name} className="flex items-start space-x-4 p-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <skill.icon className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-1">{skill.name}</h3>
+                <p className="text-sm text-muted-foreground">{skill.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button variant="outline" asChild>
+            <Link href="/skills">
+              Explore All Skills <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
+          <p className="text-muted-foreground mb-8">
+            I'm always excited to collaborate on new projects and challenges. 
+            Whether you're looking to hire or just want to chat about technology, feel free to reach out.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link href="/contact">Get In Touch</Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/about">Download CV</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
