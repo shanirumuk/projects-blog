@@ -22,7 +22,7 @@ const allProjects = [
     featured: true,
     status: "completed",
     year: "2024",
-    duration: "4 months",
+    duration: "5 months",
   },
   {
     id: "vibi-supertokens-authentication-system",
@@ -33,8 +33,20 @@ const allProjects = [
     category: "web",
     featured: true,
     status: "completed",
+    year: "2025",
+    duration: "2 months",
+  },
+  {
+    id: "vbi-user-analytics-system",
+    title: "ViBI User Analytics & Logging System",
+    description: "Comprehensive user action tracking system for aviation baggage interlining platform with PostHog integration",
+    image: "/projects/vbi-analytics-dashboard.jpg",
+    tags: ["Next.js 14", "TypeScript", "PostHog", "Clerk Auth", "Supabase", "Redis"],
+    category: "web",
+    featured: true,
+    status: "paused",
     year: "2024",
-    duration: "3 weeks",
+    duration: "6 weeks",
   },
 ];
 

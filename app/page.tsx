@@ -24,6 +24,15 @@ export default function Home() {
       category: "web",
       featured: true,
     },
+    {
+      id: "vbi-user-analytics-system",
+      title: "ViBI User Analytics & Logging System",
+      description: "Comprehensive user action tracking system for aviation baggage interlining platform with PostHog integration",
+      image: "/projects/vbi-analytics-dashboard.jpg",
+      tags: ["Next.js 14", "PostHog", "Clerk Auth", "Supabase"],
+      category: "web",
+      featured: true,
+    },
   ];
 
   const skills = [
