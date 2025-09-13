@@ -7,15 +7,7 @@ import { ArrowRight, Code, Database, Globe, Smartphone, Terminal, Zap } from "lu
 import { getRecentProjects } from "@/data/projects";
 
 export default function Home() {
-  const recentProjects = getRecentProjects(3).map(project => ({
-    id: project.id,
-    title: project.title,
-    description: project.description,
-    image: project.image,
-    tags: project.tags.slice(0, 4), // Limit tags for home page display
-    category: project.category,
-    featured: project.featured,
-  }));
+  const recentProjects = getRecentProjects(3);
 
   const skills = [
     { icon: Globe, name: "Web Development", description: "React, Next.js, Vue.js" },

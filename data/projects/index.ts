@@ -1,3 +1,5 @@
+import 'server-only';
+
 // Import all project data
 import { vibiClerkAuthenticationSystem } from './vibi-clerk-authentication-system';
 import { vibiSupertokensAuthenticationSystem } from './vibi-supertokens-authentication-system';

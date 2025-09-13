@@ -7,10 +7,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Calendar, Clock, ExternalLink, Github, Globe, Users } from "lucide-react";
-import { getProject, allProjectsData } from "@/data/projects";
+import { getProject, allProjectsData, type Project } from "@/data/projects";
 
 // Use centralized project data
 const projectsData = allProjectsData;
+
+// Type guard functions for optional project fields
+function hasCompanyUrl(project: Project): project is Project & { companyUrl: string } {
+  return 'companyUrl' in project && typeof project.companyUrl === 'string';
+}
+
+function hasRecognitionUrl(project: Project): project is Project & { recognitionUrl: string } {
+  return 'recognitionUrl' in project && typeof project.recognitionUrl === 'string';
+}
+
+function hasAchievements(project: Project): project is Project & { achievements: string[] } {
+  return 'achievements' in project && Array.isArray(project.achievements);
+}
+
+function hasKeyFindings(project: Project): project is Project & { keyFindings: string[] } {
+  return 'keyFindings' in project && Array.isArray(project.keyFindings);
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -106,18 +123,18 @@ export default async function ProjectPage({ params }: Props) {
               </Link>
             </Button>
           )}
-          {(project as any).companyUrl && (
+          {hasCompanyUrl(project) && (
             <Button variant="outline" asChild>
-              <Link href={(project as any).companyUrl} target="_blank" rel="noopener noreferrer">
+              <Link href={project.companyUrl} target="_blank" rel="noopener noreferrer">
                 <Globe className="mr-2 h-4 w-4" />
                 Company Website
                 <ExternalLink className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           )}
-          {(project as any).recognitionUrl && (
+          {hasRecognitionUrl(project) && (
             <Button variant="outline" asChild>
-              <Link href={(project as any).recognitionUrl} target="_blank" rel="noopener noreferrer">
+              <Link href={project.recognitionUrl} target="_blank" rel="noopener noreferrer">
                 <Users className="mr-2 h-4 w-4" />
                 Recognition & Media
                 <ExternalLink className="ml-2 h-4 w-4" />
@@ -199,11 +216,11 @@ export default async function ProjectPage({ params }: Props) {
           </section>
 
           {/* Research-specific sections */}
-          {(project as any).achievements && (
+          {hasAchievements(project) && (
             <section>
               <h2 className="text-2xl font-bold mb-4">Achievements & Recognition</h2>
               <div className="space-y-4">
-                {(project as any).achievements.map((achievement: string, index: number) => (
+                {project.achievements.map((achievement, index) => (
                   <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
                     <div className="h-2 w-2 rounded-full bg-yellow-500 mt-2 flex-shrink-0" />
                     <span className="text-sm font-medium">{achievement}</span>
@@ -213,11 +230,11 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
-          {(project as any).keyFindings && (
+          {hasKeyFindings(project) && (
             <section>
               <h2 className="text-2xl font-bold mb-4">Key Research Findings</h2>
               <div className="space-y-4">
-                {(project as any).keyFindings.map((finding: string, index: number) => (
+                {project.keyFindings.map((finding, index) => (
                   <Card key={index}>
                     <CardContent className="pt-6">
                       <p className="text-muted-foreground">{finding}</p>
@@ -289,18 +306,18 @@ export default async function ProjectPage({ params }: Props) {
                   </Link>
                 </Button>
               )}
-              {(project as any).companyUrl && (
+              {hasCompanyUrl(project) && (
                 <Button variant="outline" className="w-full" asChild>
-                  <Link href={(project as any).companyUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={project.companyUrl} target="_blank" rel="noopener noreferrer">
                     <Globe className="mr-2 h-4 w-4" />
                     Company Website
                     <ExternalLink className="ml-auto h-4 w-4" />
                   </Link>
                 </Button>
               )}
-              {(project as any).recognitionUrl && (
+              {hasRecognitionUrl(project) && (
                 <Button variant="outline" className="w-full" asChild>
-                  <Link href={(project as any).recognitionUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={project.recognitionUrl} target="_blank" rel="noopener noreferrer">
                     <Users className="mr-2 h-4 w-4" />
                     Recognition & Media
                     <ExternalLink className="ml-auto h-4 w-4" />

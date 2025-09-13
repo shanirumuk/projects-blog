@@ -252,7 +252,7 @@ export default function AboutPage() {
                 </Link>
               </Button>
               <Button variant="outline" className="w-full" asChild>
-                <Link href="https://projects-blog-alpha.vercel.app/" target="_blank">
+                <Link href="https://projects-blog-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
                   View Projects Blog
                 </Link>
@@ -260,8 +260,8 @@ export default function AboutPage() {
               <div className="text-sm text-muted-foreground space-y-2">
                 <p><strong>Email:</strong> shanirumuk@gmail.com</p>
                 <p><strong>Location:</strong> Nürnberg, Germany</p>
-                <p><strong>GitHub:</strong> <Link href="https://github.com/shanirumuk" target="_blank" className="text-primary hover:underline">github.com/shanirumuk</Link></p>
-                <p><strong>LinkedIn:</strong> <Link href="https://linkedin.com/in/shanise-mukwashi-139159199" target="_blank" className="text-primary hover:underline">LinkedIn Profile</Link></p>
+                <p><strong>GitHub:</strong> <Link href="https://github.com/shanirumuk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">github.com/shanirumuk</Link></p>
+                <p><strong>LinkedIn:</strong> <Link href="https://linkedin.com/in/shanise-mukwashi-139159199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn Profile</Link></p>
               </div>
             </CardContent>
           </Card>
