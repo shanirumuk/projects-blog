@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Code, Database, Globe, Smartphone, Terminal, Zap } from "lucide-react";
-import { getFeaturedProjects } from "@/data/projects";
+import { getRecentProjects } from "@/data/projects";
 
 export default function Home() {
-  const featuredProjects = getFeaturedProjects().map(project => ({
+  const recentProjects = getRecentProjects(3).map(project => ({
     id: project.id,
     title: project.title,
     description: project.description,
@@ -51,21 +51,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Recent Projects */}
       <section className="py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-4">Recent Projects</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my technical skills and problem-solving abilities.
+            Here are my most recent projects that showcase my technical skills and problem-solving abilities.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredProjects.map((project) => (
+          {recentProjects.map((project) => (
             <Card key={project.id} className="group hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-md mb-4 flex items-center justify-center">
-                  <Code className="h-12 w-12 text-muted-foreground" />
+                <div className="aspect-video bg-white border border-border rounded-md mb-4 flex items-center justify-center">
+                  <Code className="h-12 w-12 text-primary/60" />
                 </div>
                 <CardTitle className="line-clamp-1">{project.title}</CardTitle>
                 <CardDescription className="line-clamp-2">

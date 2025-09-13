@@ -128,10 +128,11 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Project Image */}
       <div className="mb-12">
-        <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
+        <div className="aspect-video bg-white border border-border rounded-lg flex items-center justify-center">
           <div className="text-center">
-            <Globe className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-            <p className="text-muted-foreground">Project Screenshot</p>
+            <Globe className="h-16 w-16 text-primary/60 mx-auto mb-4" />
+            <p className="text-muted-foreground font-medium">{project.title}</p>
+            <p className="text-xs text-muted-foreground mt-2">Project Overview</p>
           </div>
         </div>
       </div>

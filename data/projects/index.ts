@@ -7,6 +7,7 @@ import { supportSystemIntegration } from './support-system-integration';
 import { flightTrackingApiIntegration } from './flight-tracking-api-integration';
 import { rentresolvePropertyPlatform } from './rentresolve-property-platform';
 import { backpackWeightLoadingResearch } from './backpack-weight-loading-research';
+import { lufthansaCrisisAnalysis } from './lufthansa-crisis-analysis';
 
 // Project type definition - use a union type of all project types
 export type Project = typeof vibiClerkAuthenticationSystem | 
@@ -16,7 +17,8 @@ export type Project = typeof vibiClerkAuthenticationSystem |
                      typeof supportSystemIntegration |
                      typeof flightTrackingApiIntegration |
                      typeof rentresolvePropertyPlatform |
-                     typeof backpackWeightLoadingResearch;
+                     typeof backpackWeightLoadingResearch |
+                     typeof lufthansaCrisisAnalysis;
 
 // All projects data
 export const allProjectsData = {
@@ -28,6 +30,7 @@ export const allProjectsData = {
   [flightTrackingApiIntegration.id]: flightTrackingApiIntegration,
   [rentresolvePropertyPlatform.id]: rentresolvePropertyPlatform,
   [backpackWeightLoadingResearch.id]: backpackWeightLoadingResearch,
+  [lufthansaCrisisAnalysis.id]: lufthansaCrisisAnalysis,
 } as const;
 
 // Helper functions
@@ -43,6 +46,18 @@ export const getFeaturedProjects = (): Project[] => {
   return getAllProjects().filter(project => project.featured);
 };
 
+export const getRecentProjects = (limit: number = 3): Project[] => {
+  return getAllProjects()
+    .sort((a, b) => {
+      // Sort by year (most recent first), then by featured status
+      const yearA = parseInt(a.year.toString().split('-')[0]);
+      const yearB = parseInt(b.year.toString().split('-')[0]);
+      if (yearB !== yearA) return yearB - yearA;
+      return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+    })
+    .slice(0, limit);
+};
+
 export const getProjectsByCategory = (category: string): Project[] => {
   if (category === 'all') return getAllProjects();
   return getAllProjects().filter(project => project.category === category);
@@ -52,9 +67,36 @@ export const getProjectCategories = () => {
   const projects = getAllProjects();
   const categories = [
     { id: "all", name: "All Projects", count: projects.length },
-    { id: "web", name: "Web Development", count: projects.filter(p => p.category === "web").length },
-    { id: "api", name: "API Integration", count: projects.filter(p => p.category === "api").length },
-    { id: "research", name: "Research", count: projects.filter(p => p.category === "research").length },
+    { 
+      id: "web", 
+      name: "Web Development", 
+      count: projects.filter(p => {
+        if ((p as any).categories && Array.isArray((p as any).categories)) {
+          return (p as any).categories.includes("web");
+        }
+        return p.category === "web";
+      }).length 
+    },
+    { 
+      id: "api", 
+      name: "API Integration", 
+      count: projects.filter(p => {
+        if ((p as any).categories && Array.isArray((p as any).categories)) {
+          return (p as any).categories.includes("api");
+        }
+        return p.category === "api";
+      }).length 
+    },
+    { 
+      id: "research", 
+      name: "Research", 
+      count: projects.filter(p => {
+        if ((p as any).categories && Array.isArray((p as any).categories)) {
+          return (p as any).categories.includes("research");
+        }
+        return p.category === "research";
+      }).length 
+    },
   ];
   
   return categories;
@@ -68,6 +110,7 @@ export const getProjectSummary = (project: Project) => ({
   image: project.image,
   tags: project.tags.slice(0, 6), // Limit tags for listing view
   category: project.category,
+  categories: (project as any).categories, // Include multiple categories if available
   featured: project.featured,
   status: project.status,
   year: project.year,
@@ -75,5 +118,13 @@ export const getProjectSummary = (project: Project) => ({
 });
 
 export const getAllProjectSummaries = () => {
-  return getAllProjects().map(getProjectSummary);
+  return getAllProjects()
+    .sort((a, b) => {
+      // Sort by year (most recent first), then by featured status
+      const yearA = parseInt(a.year.toString().split('-')[0]);
+      const yearB = parseInt(b.year.toString().split('-')[0]);
+      if (yearB !== yearA) return yearB - yearA;
+      return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
+    })
+    .map(getProjectSummary);
 };

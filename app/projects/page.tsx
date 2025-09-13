@@ -1,4 +1,6 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,16 +8,26 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Code, Filter, Search } from "lucide-react";
 import { getAllProjectSummaries, getProjectCategories } from "@/data/projects";
 
-export const metadata: Metadata = {
-  title: "All Projects",
-  description: "Explore all my development projects, from web applications to mobile apps and APIs",
-};
+// Metadata is handled in layout.tsx for client components
 
 // Load project data from centralized data files
 const allProjects = getAllProjectSummaries();
 const categories = getProjectCategories();
 
 export default function ProjectsPage() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  
+  const filteredProjects = selectedCategory === "all" 
+    ? allProjects 
+    : allProjects.filter(project => {
+        // Check if project has multiple categories
+        if (project.categories && Array.isArray(project.categories)) {
+          return project.categories.includes(selectedCategory);
+        }
+        // Fallback to single category
+        return project.category === selectedCategory;
+      });
+  
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
@@ -33,8 +45,9 @@ export default function ProjectsPage() {
           {categories.map((category) => (
             <Button
               key={category.id}
-              variant={category.id === "all" ? "default" : "outline"}
+              variant={selectedCategory === category.id ? "default" : "outline"}
               className="flex items-center gap-2"
+              onClick={() => setSelectedCategory(category.id)}
             >
               <Filter className="h-4 w-4" />
               {category.name}
@@ -49,30 +62,32 @@ export default function ProjectsPage() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         <div className="text-center p-4 rounded-lg bg-muted/50">
-          <div className="text-2xl font-bold text-primary">{allProjects.length}</div>
-          <div className="text-sm text-muted-foreground">Total Projects</div>
+          <div className="text-2xl font-bold text-primary">{filteredProjects.length}</div>
+          <div className="text-sm text-muted-foreground">
+            {selectedCategory === "all" ? "Total Projects" : "Filtered Projects"}
+          </div>
         </div>
         <div className="text-center p-4 rounded-lg bg-muted/50">
-          <div className="text-2xl font-bold text-primary">{allProjects.filter(p => p.featured).length}</div>
+          <div className="text-2xl font-bold text-primary">{filteredProjects.filter(p => p.featured).length}</div>
           <div className="text-sm text-muted-foreground">Featured</div>
         </div>
         <div className="text-center p-4 rounded-lg bg-muted/50">
-          <div className="text-2xl font-bold text-primary">{new Set(allProjects.flatMap(p => p.tags)).size}</div>
+          <div className="text-2xl font-bold text-primary">{new Set(filteredProjects.flatMap(p => p.tags)).size}</div>
           <div className="text-sm text-muted-foreground">Technologies</div>
         </div>
         <div className="text-center p-4 rounded-lg bg-muted/50">
-          <div className="text-2xl font-bold text-primary">{new Set(allProjects.map(p => p.category)).size}</div>
+          <div className="text-2xl font-bold text-primary">{new Set(filteredProjects.map(p => p.category)).size}</div>
           <div className="text-sm text-muted-foreground">Categories</div>
         </div>
       </div>
 
       {/* Projects Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {allProjects.map((project) => (
+        {filteredProjects.map((project) => (
           <Card key={project.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-md mb-4 flex items-center justify-center relative overflow-hidden">
-                <Code className="h-12 w-12 text-muted-foreground" />
+              <div className="aspect-video bg-white border border-border rounded-md mb-4 flex items-center justify-center relative overflow-hidden">
+                <Code className="h-12 w-12 text-primary/60" />
                 {project.featured && (
                   <Badge className="absolute top-2 right-2">Featured</Badge>
                 )}

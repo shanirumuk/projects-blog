@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin, Calendar, Clock, Github, Linkedin, Send } from "lucide-react";
+import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Me",
@@ -20,32 +20,21 @@ export default function ContactPage() {
       title: "Email",
       value: "shanirumuk@gmail.com",
       description: "Best for detailed project discussions",
-      href: "mailto:shanirumuk@gmail.com",
-      available: "Always available"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "+1 (555) 123-4567",
-      description: "For urgent matters or quick calls",
-      href: "tel:+15551234567",
-      available: "9 AM - 6 PM PST"
+      href: "mailto:shanirumuk@gmail.com"
     },
     {
       icon: Github,
       title: "GitHub",
-      value: "@yourusername",
-      description: "View my code and contribute",
-      href: "https://github.com/yourusername",
-      available: "Public profile"
+      value: "shanirumuk",
+      description: "View my code and projects",
+      href: "https://github.com/shanirumuk"
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
       value: "Shanise Mukwashi",
       description: "Professional networking",
-      href: "https://linkedin.com/in/shanise-mukwashi",
-      available: "Professional profile"
+      href: "https://linkedin.com/in/shanise-mukwashi-139159199"
     },
   ];
 
@@ -72,12 +61,6 @@ export default function ContactPage() {
     },
   ];
 
-  const availability = {
-    status: "Available for new projects",
-    nextAvailable: "Immediate start",
-    preferredProjectLength: "2-6 months",
-    timezone: "PST (UTC-8)"
-  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -91,9 +74,9 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-12">
+      <div className="max-w-4xl mx-auto">
         {/* Contact Form */}
-        <div className="lg:col-span-2">
+        <div className="mb-12">
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">Send Me a Message</CardTitle>
@@ -150,22 +133,6 @@ export default function ContactPage() {
                   </select>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="budget" className="text-sm font-medium">
-                    Budget Range
-                  </label>
-                  <select 
-                    id="budget" 
-                    className="w-full p-2 border border-input bg-background rounded-md text-sm"
-                  >
-                    <option value="">Select budget range</option>
-                    <option value="under-5k">Under $5,000</option>
-                    <option value="5k-15k">$5,000 - $15,000</option>
-                    <option value="15k-30k">$15,000 - $30,000</option>
-                    <option value="30k-plus">$30,000+</option>
-                    <option value="hourly">Hourly rate discussion</option>
-                  </select>
-                </div>
 
                 <div className="space-y-2">
                   <label htmlFor="timeline" className="text-sm font-medium">
@@ -200,40 +167,8 @@ export default function ContactPage() {
           </Card>
         </div>
 
-        {/* Sidebar */}
-        <div className="space-y-8">
-          {/* Availability Status */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                Availability
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <div className="text-sm font-medium mb-1">Current Status</div>
-                <Badge variant="secondary" className="bg-green-100 text-green-800">
-                  {availability.status}
-                </Badge>
-              </div>
-              <Separator />
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Next Available:</span>
-                  <span className="font-medium">{availability.nextAvailable}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Project Length:</span>
-                  <span className="font-medium">{availability.preferredProjectLength}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Timezone:</span>
-                  <span className="font-medium">{availability.timezone}</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Sidebar - Now below the form */}
+        <div className="grid md:grid-cols-2 gap-8">
 
           {/* Contact Methods */}
           <Card>
@@ -255,9 +190,6 @@ export default function ContactPage() {
                       <div className="text-sm text-primary">{method.value}</div>
                       <div className="text-xs text-muted-foreground mt-1">
                         {method.description}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {method.available}
                       </div>
                     </div>
                   </Link>
@@ -290,80 +222,31 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          {/* Response Time */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="h-5 w-5" />
-                Response Times
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm">
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Email:</span>
-                <span className="font-medium">Within 24 hours</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Phone:</span>
-                <span className="font-medium">Same day</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Project quote:</span>
-                <span className="font-medium">2-3 business days</span>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
 
       {/* FAQ Section */}
       <section className="mt-16">
-        <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <h2 className="text-2xl font-bold text-center mb-8">Common Questions</h2>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">What's your development process?</CardTitle>
+              <CardTitle className="text-lg">How do you work?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                I follow an agile approach with regular check-ins, clear milestones, 
-                and transparent communication throughout the project lifecycle.
+                I work collaboratively with clear communication and regular updates throughout the project.
               </p>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-lg">Do you work with teams?</CardTitle>
+              <CardTitle className="text-lg">What can you help with?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Yes! I can integrate with existing teams or work independently. 
-                I'm experienced with collaborative tools and agile methodologies.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">What about project maintenance?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                I offer ongoing support and maintenance packages to ensure your 
-                project stays up-to-date and performs optimally.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Can you help with existing projects?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Absolutely! I can help with code reviews, performance optimization, 
-                feature additions, or technical debt reduction.
+                Data management, software engineering, system integration, and web development projects.
               </p>
             </CardContent>
           </Card>

@@ -9,7 +9,7 @@ import { Home, Users, Building, Star, Shield, Search, Calendar, MapPin, FolderOp
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         {/* Logo/Brand */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -75,13 +75,13 @@ export function Header() {
         {/* Social Links & Contact */}
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://github.com/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/shanirumuk" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </Link>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="https://linkedin.com/in/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
+            <Link href="https://linkedin.com/in/shanise-mukwashi-139159199" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>
             </Link>

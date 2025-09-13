@@ -10,6 +10,7 @@ The project culminated in a fully functional web platform that translates comple
   image: "/projects/berlin-housing-platform.jpg",
   tags: ["Python", "Next.js", "TypeScript", "XGBoost", "Random Forest", "FastAPI", "Pandas", "Scikit-learn", "Leaflet.js", "Machine Learning", "Data Science", "Urban Analytics", "PostgreSQL", "OpenStreetMap API", "Kaggle API"],
   category: "web",
+  categories: ["web", "research"],
   featured: true,
   status: "completed",
   year: "2025",
