@@ -150,7 +150,9 @@ export default function SkillsPage() {
           <div className="text-sm text-muted-foreground">Projects Built</div>
         </div>
         <div className="text-center p-6 rounded-lg bg-muted/50">
-          <div className="text-3xl font-bold text-primary mb-2">6</div>
+          <div className="text-3xl font-bold text-primary mb-2">
+            {skillCategories?.length || 0}
+          </div>
           <div className="text-sm text-muted-foreground">Skill Categories</div>
         </div>
       </div>
