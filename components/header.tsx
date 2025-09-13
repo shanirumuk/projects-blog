@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, User, FolderOpen, Home } from "lucide-react";
+import { Home, Users, Building, Star, Shield, Search, Calendar, MapPin, FolderOpen, Github, Linkedin, Mail } from "lucide-react";
 
 export function Header() {
   return (
@@ -13,10 +13,10 @@ export function Header() {
         {/* Logo/Brand */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <User className="h-4 w-4" />
+            <Home className="h-4 w-4" />
           </div>
-          <span className="font-bold text-lg">Shanise Mukwashi</span>
-          <Badge variant="secondary" className="ml-2">Portfolio</Badge>
+          <span className="font-bold text-xl">Portfolio</span>
+          <Badge variant="secondary" className="ml-2">Projects</Badge>
         </Link>
 
         {/* Navigation */}

@@ -24,15 +24,6 @@ export default function Home() {
       category: "web",
       featured: true,
     },
-    {
-      id: "ai-chatbot",
-      title: "AI Customer Service Bot",
-      description: "Intelligent chatbot using OpenAI API and Python FastAPI",
-      image: "/placeholder-project-3.jpg",
-      tags: ["Python", "FastAPI", "OpenAI", "Redis"],
-      category: "api",
-      featured: true,
-    },
   ];
 
   const skills = [
