@@ -7,12 +7,12 @@ export const vibiSupertokensAuthenticationSystem = {
 The project involved rebuilding the entire authentication infrastructure within a 2-3 week timeline, leveraging SuperTokens' pre-built React components while maintaining the sophisticated three-tier permission system and multi-tenant architecture that supports airlines, airports, OTAs, and handling agents.
 
 Successfully deployed to Russian data centers with full webhook synchronization, maintaining seamless user experience during the migration while ensuring compliance with local data protection regulations. The solution demonstrates expertise in authentication system architecture, international compliance requirements, and rapid enterprise software migration.`,
-  image: "/projects/vibi-supertokens-dashboard.jpg",
+  image: "/arnaud-girault-d6_RKGmHt64-unsplash.jpg",
   tags: ["SuperTokens", "Next.js 14", "TypeScript", "PostgreSQL 16", "Redis 7", "Node.js 20", "React", "JWT", "Webhooks", "Self-Hosted"],
   category: "web",
   featured: true,
   status: "completed",
-  year: "2024",
+  year: "2025",
   duration: "2 months",
   challenges: [
     "Migrating from hosted Clerk to self-hosted SuperTokens within an initially stated 2-3 week deadline for Russian market compliance, which was extended to 2 months due to the complexity of the project",

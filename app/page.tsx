@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -64,8 +65,14 @@ export default function Home() {
           {recentProjects.map((project) => (
             <Card key={project.id} className="group hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="aspect-video bg-white border border-border rounded-md mb-4 flex items-center justify-center">
-                  <Code className="h-12 w-12 text-primary/60" />
+                <div className="aspect-video bg-white border border-border rounded-md mb-4 relative overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <CardTitle className="line-clamp-1">{project.title}</CardTitle>
                 <CardDescription className="line-clamp-2">

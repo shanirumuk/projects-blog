@@ -5,7 +5,7 @@ export const lufthansaCrisisAnalysis = {
   longDescription: `This comprehensive research project examined Lufthansa's financial performance and operational strategies in response to multiple crises affecting the aviation industry post-2020. The study focused on how Europe's largest airline navigated through unprecedented challenges including the COVID-19 pandemic, oil price volatility, geopolitical conflicts, labor strikes, and internal operational issues.
 
 Using a mixed-methods approach combining quantitative financial analysis with qualitative stakeholder insights, this research provided a holistic view of crisis management in the aviation sector. The analysis covered revenue impacts, cost management strategies, government aid utilization, and long-term sustainability measures implemented by Lufthansa during one of the most challenging periods in aviation history.`,
-  image: "/projects/lufthansa-analysis-cover.jpg",
+  image: "/lufthansa.png",
   tags: ["Financial Analysis", "Crisis Management", "Aviation Industry", "Mixed Methods Research", "Strategic Analysis", "DCFF Valuation", "Statistical Analysis"],
   category: "research",
   featured: true,

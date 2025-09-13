@@ -7,12 +7,12 @@ export const vibiClerkAuthenticationSystem = {
 The platform manages five distinct organization types (ViBI system owner, Airlines, Airports, OTAs, and Handling Agents) with a sophisticated three-tier permission system: Organization Type → Department → Role. Each organization maintains complete data isolation while enabling secure inter-organizational baggage interlining operations.
 
 Key achievement: Successfully implemented a scalable authentication architecture that handles complex aviation industry workflows while maintaining regulatory compliance and audit trails required for international baggage operations.`,
-  image: "/projects/vibi-clerk-dashboard.jpg",
+  image: "/arnaud-girault-d6_RKGmHt64-unsplash.jpg",
   tags: ["Next.js 14", "TypeScript", "Clerk", "Supabase", "PostgreSQL", "Redis", "Vercel", "Tailwind CSS", "React Hook Form", "Zod"],
   category: "web",
   featured: true,
   status: "completed",
-  year: "2025",
+  year: "2024",
   duration: "5 months",
   challenges: [
     "Designing a multi-tenant architecture supporting 5 different organization types with complex hierarchical permissions",

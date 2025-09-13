@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -128,12 +129,15 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Project Image */}
       <div className="mb-12">
-        <div className="aspect-video bg-white border border-border rounded-lg flex items-center justify-center">
-          <div className="text-center">
-            <Globe className="h-16 w-16 text-primary/60 mx-auto mb-4" />
-            <p className="text-muted-foreground font-medium">{project.title}</p>
-            <p className="text-xs text-muted-foreground mt-2">Project Overview</p>
-          </div>
+        <div className="aspect-video bg-white border border-border rounded-lg overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={1200}
+            height={675}
+            className="w-full h-full object-cover"
+            priority
+          />
         </div>
       </div>
 

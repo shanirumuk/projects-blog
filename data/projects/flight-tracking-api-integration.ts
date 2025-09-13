@@ -7,7 +7,7 @@ export const flightTrackingApiIntegration = {
 The system features a robust webhook architecture built with Next.js 14 and Supabase, providing real-time flight updates, terminal and gate management, and automated alert subscriptions for the ViBI aviation ecosystem. Through extensive API vendor meetings and technical evaluations, the project demonstrates the complexities of aviation data integration and the importance of choosing the right API partner for enterprise-grade applications.
 
 This project showcases advanced backend architecture, real-time data processing, and the challenges of working with multiple third-party aviation data providers in a production environment serving airlines, airports, and ground handling companies within the ViBI platform.`,
-  image: "/projects/flight-tracking-dashboard.jpg",
+  image: "/arnaud-girault-d6_RKGmHt64-unsplash.jpg",
   tags: ["Next.js 14", "TypeScript", "Supabase", "PostgreSQL", "Webhooks", "Aviation APIs", "OAG API", "Cirium API", "Kafka", "Real-time Processing"],
   category: "api",
   featured: true,

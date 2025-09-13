@@ -7,7 +7,7 @@ export const vbiUserAnalyticsSystem = {
 The platform serves airlines, airports, and ground handling companies, requiring precise tracking of baggage routing decisions, flight selections, and service bookings. The analytics system captures both authenticated user actions through JWT verification and anonymous visitor behavior across the public website.
 
 Built with a focus on enterprise-grade reliability, the system includes error boundaries, retry mechanisms, rate limiting, and comprehensive privacy controls to ensure GDPR compliance while delivering actionable insights for product development and business intelligence.`,
-  image: "/projects/vbi-analytics-dashboard.jpg",
+  image: "/arnaud-girault-d6_RKGmHt64-unsplash.jpg",
   tags: ["Next.js 14", "TypeScript", "PostHog", "Clerk Auth", "Supabase", "Redis", "Vercel", "JWT", "React Hooks", "HOC Pattern", "Middleware"],
   category: "web",
   featured: true,

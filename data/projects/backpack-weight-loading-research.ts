@@ -5,7 +5,7 @@ export const backpackWeightLoadingResearch = {
   longDescription: `What started as a Grade 7 science fair project evolved into a three-year research journey that took me from regional competitions in Namibia to international recognition in Kenya. This comprehensive study examined the critical issue of backpack weight loading among primary school children, revealing that the majority of students were carrying loads exceeding safe weight recommendations.
 
 The research began at Rosh Pinah Academy in Namibia, where I discovered that 64% of pupils carried backpacks weighing more than 10% of their body weight - well above the US standard recommendation. I later continued this research at Aggeneys International Academy in South Africa, representing the school at regional, national, and international science competitions. Following my competition success, I became an assistant mentor at AIA, helping and advising fellow students in the subsequent year - sharing both research methodology and the importance of addressing real-world health challenges through scientific inquiry.`,
-  image: "/projects/backpack-research-study.jpg",
+  image: "/backpack.png",
   tags: ["Health Research", "Statistical Analysis", "Cross-Cultural Study", "Product Development", "Public Health", "Biomedical Engineering"],
   category: "research",
   featured: true,

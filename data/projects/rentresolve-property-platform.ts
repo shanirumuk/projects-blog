@@ -5,10 +5,11 @@ export const rentresolvePropertyPlatform = {
   longDescription: `RentResolve is a full-stack property rental platform designed specifically for the Zimbabwean market, developed for Ndirimo Properties. The platform addresses critical gaps in tenant background information and creates accountability for both landlords and tenants through a comprehensive rating system.
 
 The application features separate dashboards for landlords, tenants, and staff administrators, with sophisticated KYC verification processes, dispute resolution systems, and integrated payment processing through Paynow and international payment gateways. The platform aims to reduce rental defaults, prevent tenant abuse, and bring transparency to Zimbabwe's property rental market.`,
-  image: "/projects/rentresolve-dashboard.jpg",
+  image: "/rental.png",
   tags: ["React", "Next.js", "Supabase", "TypeScript", "Tailwind CSS", "Node.js", "Paynow API", "GPS Integration"],
   category: "web",
-  featured: true,
+  categories: ["web", "research"],
+  featured: false,   // removed featured
   status: "in-progress",
   year: "2025",
   duration: "2 months",

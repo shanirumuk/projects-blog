@@ -5,12 +5,12 @@ export const supportSystemIntegration = {
   longDescription: `A comprehensive support system project that integrated Zammad API to create a modern customer support platform. The project involved extensive API integration work and strategic planning for enhanced features including chatbot functionality and professional support agent services.
 
 During the development phase, I engaged in detailed discussions with SupportYourApp to explore additional capabilities and potential partnerships for expanding the platform's functionality with AI-powered chat features and dedicated support staff.`,
-  image: "/projects/support-system-screenshot.jpg",
+  image: "/arnaud-girault-d6_RKGmHt64-unsplash.jpg",
   tags: ["Zammad API", "Support Systems", "Customer Service", "API Integration", "Chatbot Planning"],
   category: "api",
   featured: false,
   status: "in-progress",
-  year: "2024",
+  year: "2025",
   duration: "2 weeks",
   challenges: [
     "Integrating complex Zammad API endpoints for comprehensive ticket management",

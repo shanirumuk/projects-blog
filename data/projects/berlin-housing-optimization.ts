@@ -7,7 +7,7 @@ export const berlinHousingOptimization = {
 The research involved analyzing 93,248 Berlin rental records spanning 2007-2023, integrating multiple data sources including government statistics, OpenStreetMap amenity data, and transportation networks. I implemented and compared eight different machine learning algorithms, with XGBoost achieving optimal performance (R² = 0.509, RMSE = €0.789/sqm).
 
 The project culminated in a fully functional web platform that translates complex machine learning insights into an accessible tool for housing seekers, urban planners, and policymakers. The thesis received a grade of 87/100, demonstrating both technical excellence and practical applicability.`,
-  image: "/projects/berlin-housing-platform.jpg",
+  image: "/berlinhomes.png",
   tags: ["Python", "Next.js", "TypeScript", "XGBoost", "Random Forest", "FastAPI", "Pandas", "Scikit-learn", "Leaflet.js", "Machine Learning", "Data Science", "Urban Analytics", "PostgreSQL", "OpenStreetMap API", "Kaggle API"],
   category: "web",
   categories: ["web", "research"],

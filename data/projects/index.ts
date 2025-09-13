@@ -8,6 +8,7 @@ import { flightTrackingApiIntegration } from './flight-tracking-api-integration'
 import { rentresolvePropertyPlatform } from './rentresolve-property-platform';
 import { backpackWeightLoadingResearch } from './backpack-weight-loading-research';
 import { lufthansaCrisisAnalysis } from './lufthansa-crisis-analysis';
+import { weatherForecastApp } from './weather-forecast-app';
 
 // Project type definition - use a union type of all project types
 export type Project = typeof vibiClerkAuthenticationSystem | 
@@ -18,7 +19,8 @@ export type Project = typeof vibiClerkAuthenticationSystem |
                      typeof flightTrackingApiIntegration |
                      typeof rentresolvePropertyPlatform |
                      typeof backpackWeightLoadingResearch |
-                     typeof lufthansaCrisisAnalysis;
+                     typeof lufthansaCrisisAnalysis |
+                     typeof weatherForecastApp;
 
 // All projects data
 export const allProjectsData = {
@@ -31,6 +33,7 @@ export const allProjectsData = {
   [rentresolvePropertyPlatform.id]: rentresolvePropertyPlatform,
   [backpackWeightLoadingResearch.id]: backpackWeightLoadingResearch,
   [lufthansaCrisisAnalysis.id]: lufthansaCrisisAnalysis,
+  [weatherForecastApp.id]: weatherForecastApp,
 } as const;
 
 // Helper functions
@@ -75,6 +78,16 @@ export const getProjectCategories = () => {
           return (p as any).categories.includes("web");
         }
         return p.category === "web";
+      }).length 
+    },
+    { 
+      id: "mobile", 
+      name: "Mobile Apps", 
+      count: projects.filter(p => {
+        if ((p as any).categories && Array.isArray((p as any).categories)) {
+          return (p as any).categories.includes("mobile");
+        }
+        return p.category === "mobile";
       }).length 
     },
     { 
