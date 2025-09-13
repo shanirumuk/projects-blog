@@ -58,7 +58,9 @@ Key achievement: Successfully implemented a scalable authentication architecture
       backend: "Next.js API routes handling Clerk webhooks, Supabase client with custom JWT validation middleware. PostgreSQL database with complex relational schema supporting multi-tenant architecture. Redis for session caching and rate limiting. Row Level Security policies for data isolation.",
       deployment: "Deployed on Vercel with automatic deployments from GitHub. Supabase hosted PostgreSQL with Redis Cloud for caching. Environment-specific configurations for development, staging, and production with proper secret management.",
       testing: "Integration testing for webhook endpoints and permission systems. End-to-end testing with Playwright for critical user flows. Load testing for multi-tenant scenarios and user provisioning workflows."
-    }
+    },
+
+    githubUrl: null // Private enterprise repository
   },
   "vibi-supertokens-authentication-system": {
     id: "vibi-supertokens-authentication-system",
@@ -109,52 +111,9 @@ Successfully deployed to Russian data centers with full webhook synchronization,
       backend: "SuperTokens Core self-hosted on Node.js 20+ with PostgreSQL 16 as the authentication database. Custom webhook handlers for real-time synchronization with business database. JWT custom claims service for Supabase compatibility. Redis 7 clustering for distributed session management.",
       deployment: "Self-hosted deployment in Russian data centers using Docker containers with Kubernetes orchestration. PostgreSQL database with proper backup and replication strategies. Redis clustering for high availability. CI/CD pipeline with GitLab for deployment automation.",
       testing: "Comprehensive migration testing with parallel system validation. Load testing for Russian infrastructure with realistic traffic patterns. Security penetration testing for self-hosted setup. User acceptance testing with department representatives across all organization types."
-    }
-  },
-  "ai-chatbot": {
-    id: "ai-chatbot",
-    title: "AI Customer Service Bot",
-    description: "An intelligent customer service chatbot powered by OpenAI's GPT API with context-aware responses.",
-    longDescription: `This AI-powered chatbot represents the integration of modern language models into customer service workflows. Built with Python and FastAPI, it provides intelligent, context-aware responses to customer inquiries while maintaining conversation history and escalation capabilities.
-
-The system includes natural language processing, sentiment analysis, and integration with existing customer support systems. It demonstrates how AI can enhance customer service while maintaining human oversight and control.`,
-    image: "/placeholder-project-3.jpg",
-    tags: ["Python", "FastAPI", "OpenAI", "Redis", "PostgreSQL", "WebSockets", "Docker"],
-    category: "api",
-    featured: true,
-    status: "completed",
-    year: "2024",
-    duration: "1 month",
-    demoUrl: "https://chatbot-demo.example.com",
-    githubUrl: "https://github.com/yourusername/ai-chatbot",
-    challenges: [
-      "Training the AI model with domain-specific knowledge",
-      "Implementing conversation context and memory",
-      "Ensuring response accuracy and relevance",
-      "Managing API rate limits and costs effectively",
-    ],
-    learnings: [
-      "OpenAI API integration and prompt engineering",
-      "Real-time communication with WebSockets",
-      "Caching strategies with Redis for performance",
-      "AI model fine-tuning and conversation management",
-    ],
-    features: [
-      "Natural language understanding and generation",
-      "Context-aware conversation handling",
-      "Sentiment analysis and escalation triggers",
-      "Integration with existing support tickets",
-      "Multi-language support",
-      "Analytics and conversation insights",
-      "Real-time responses via WebSockets",
-      "Fallback to human agents",
-    ],
-    techDetails: {
-      backend: "Python with FastAPI framework, async/await for performance, Pydantic for data validation",
-      ai: "OpenAI GPT-4 API for language processing, custom prompt engineering, and conversation context management",
-      database: "PostgreSQL for conversation history, Redis for caching and session management",
-      deployment: "Docker containers on AWS ECS with Application Load Balancer and auto-scaling",
-    }
+    },
+    demoUrl: null, // Private enterprise application  
+    githubUrl: null // Private enterprise repository
   },
 };
 
@@ -234,15 +193,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
 
         <div className="flex flex-wrap gap-4">
-          {project.demoUrl && (
-            <Button asChild>
-              <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                <Globe className="mr-2 h-4 w-4" />
-                Live Demo
-                <ExternalLink className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          )}
+          
           {project.githubUrl && (
             <Button variant="outline" asChild>
               <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -365,15 +316,6 @@ export default async function ProjectPage({ params }: Props) {
               <CardTitle>Project Links</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {project.demoUrl && (
-                <Button variant="outline" className="w-full" asChild>
-                  <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                    <Globe className="mr-2 h-4 w-4" />
-                    Live Demo
-                    <ExternalLink className="ml-auto h-4 w-4" />
-                  </Link>
-                </Button>
-              )}
               {project.githubUrl && (
                 <Button variant="outline" className="w-full" asChild>
                   <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
