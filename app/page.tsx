@@ -1,30 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Code, Database, Globe, Smartphone, Terminal, Zap } from "lucide-react";
+import { getRecentProjects } from "@/data/projects";
 
 export default function Home() {
-  const featuredProjects = [
-    {
-      id: "vibi-clerk-authentication-system",
-      title: "ViBI Aviation User Management - Clerk",
-      description: "Enterprise-grade authentication system for aviation industry with multi-tenant support",
-      image: "/projects/vibi-clerk-dashboard.jpg",
-      tags: ["Next.js 14", "Clerk", "Supabase", "PostgreSQL"],
-      category: "web",
-      featured: true,
-    },
-    {
-      id: "vibi-supertokens-authentication-system",
-      title: "ViBI Aviation User Management - SuperTokens",
-      description: "Self-hosted authentication migration for Russian market compliance (3-week timeline)",
-      image: "/projects/vibi-supertokens-dashboard.jpg",
-      tags: ["SuperTokens", "Self-Hosted", "PostgreSQL", "Redis"],
-      category: "web",
-      featured: true,
-    },
-  ];
+  const recentProjects = getRecentProjects(3);
 
   const skills = [
     { icon: Globe, name: "Web Development", description: "React, Next.js, Vue.js" },
@@ -61,21 +44,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Recent Projects */}
       <section className="py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-4">Recent Projects</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my technical skills and problem-solving abilities.
+            Here are my most recent projects that showcase my technical skills and problem-solving abilities.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredProjects.map((project) => (
+          {recentProjects.map((project) => (
             <Card key={project.id} className="group hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-md mb-4 flex items-center justify-center">
-                  <Code className="h-12 w-12 text-muted-foreground" />
+                <div className="aspect-video bg-white border border-border rounded-md mb-4 relative overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <CardTitle className="line-clamp-1">{project.title}</CardTitle>
                 <CardDescription className="line-clamp-2">

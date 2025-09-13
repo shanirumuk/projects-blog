@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,88 +9,64 @@ import { Download, Mail, MapPin, Calendar, Briefcase, GraduationCap, Award } fro
 
 export const metadata: Metadata = {
   title: "About Me",
-  description: "Learn about my background, experience, and passion for software development",
+  description: "Data Management and Software Engineer with expertise in full-stack development, data analytics, and system integration",
 };
 
 export default function AboutPage() {
   const experience = [
     {
-      title: "Senior Full-Stack Developer",
-      company: "Tech Solutions Inc.",
-      location: "San Francisco, CA",
-      period: "2023 - Present",
-      description: "Lead development of enterprise web applications using React, Node.js, and AWS. Mentored junior developers and established coding standards.",
+      title: "Data Management and Software Engineer",
+      company: "ETS INTERNATIONAL GMBH",
+      location: "Nürnberg, Germany",
+      period: "Sep 2024 - Present",
+      description: "Specializing in system integration and development.",
       achievements: [
-        "Reduced application load time by 40% through optimization",
-        "Led team of 5 developers on major product redesign",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
+        "Developed flight tracking solutions using multiple APIs (Cirium, AviationStack, OAG) and implemented secure authentication systems (Clerk, SuperTokens)",
+        "Created database relationships for an interconnected baggage interline system (Supabase)",
+        "Implemented UI design for Business-to-Business (B2B) dashboards, web applications and integrated system monitoring with Zammad for API logging and error tracking to enhance system security",
       ]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency Pro",
-      location: "Remote",
-      period: "2022 - 2023",
-      description: "Developed responsive web applications for various clients using modern frontend technologies and design systems.",
+      title: "Logistics Operator",
+      company: "FLASCHENPOST",
+      location: "Potsdam, Germany",
+      period: "Jul 2023 - Feb 2024",
+      description: "Developed efficient packaging solutions, reduced costs/waste, gained insights into supply chain processes and legal requirements.",
       achievements: [
-        "Built 15+ client websites with 99%+ satisfaction rate",
-        "Created reusable component library used across projects",
-        "Improved accessibility compliance to WCAG 2.1 AA standards",
-      ]
-    },
-    {
-      title: "Junior Developer",
-      company: "StartupXYZ",
-      location: "New York, NY",
-      period: "2021 - 2022",
-      description: "Contributed to product development in fast-paced startup environment, working on both frontend and backend features.",
-      achievements: [
-        "Shipped 20+ features in first 6 months",
-        "Reduced bug reports by 30% through comprehensive testing",
-        "Collaborated with design team to improve user experience",
+        "Optimized packaging processes to reduce operational costs",
+        "Gained expertise in supply chain management and logistics",
+        "Understanding of regulatory compliance and legal requirements",
       ]
     },
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Technology",
-      location: "Boston, MA",
-      period: "2017 - 2021",
-      gpa: "3.8/4.0",
-      activities: ["Programming Club President", "ACM Student Chapter Member", "Hackathon Organizer"]
+      degree: "BSc Digital Business & Data Science",
+      institution: "University of Europe for Applied Sciences",
+      location: "Potsdam, Germany",
+      period: "2021 - 2025",
+      gpa: "",
+      activities: ["Bachelor Thesis - Affordable Housing Optimization Using Machine Learning", "Weather Application Development", "Lufthansa Business Case Analysis", "Berlin Housing Market Research"]
     },
   ];
 
   const certifications = [
     {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
+      name: "Project Management",
+      issuer: "Great Learning Academy",
       year: "2023",
-      credential: "SAA-C03"
-    },
-    {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      year: "2023",
-      credential: "PCD"
-    },
-    {
-      name: "MongoDB Certified Developer",
-      issuer: "MongoDB University",
-      year: "2022",
-      credential: "MCD"
+      credential: "Jun 2023 - Aug 2023"
     },
   ];
 
   const skills = {
-    "Frontend": ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "SASS"],
-    "Backend": ["Node.js", "Python", "Express", "FastAPI", "REST APIs", "GraphQL"],
-    "Database": ["PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
-    "Cloud & DevOps": ["AWS", "Google Cloud", "Docker", "Kubernetes", "CI/CD", "Terraform"],
-    "Mobile": ["React Native", "Expo", "Flutter", "iOS Development"],
-    "Tools & Others": ["Git", "Figma", "Jest", "Cypress", "Webpack", "Vite"],
+    "Programming Languages": ["TypeScript", "Python", "SQL"],
+    "Data & Analytics": ["Data Analytics", "Power BI", "Statistical Modeling"],
+    "Database": ["Redis", "Supabase", "Database Management"],
+    "Development Tools": ["Git", "System Integration", "API Development"],
+    "Productivity": ["Microsoft Office"],
+    "Languages": ["English (C1)", "German (B1)", "Afrikaans (B1)", "Shona (A2)"],
   };
 
   return (
@@ -98,8 +75,8 @@ export default function AboutPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">About Me</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Passionate full-stack developer with a love for creating innovative solutions 
-          and sharing knowledge through detailed project documentation.
+          Data Management and Software Engineer with expertise in full-stack development, 
+          data analytics, and system integration.
         </p>
       </div>
 
@@ -111,21 +88,18 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-6">My Journey</h2>
             <div className="prose prose-gray dark:prose-invert max-w-none space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                I'm a passionate full-stack developer with over 3 years of experience building 
-                web and mobile applications. My journey started with a fascination for how 
-                technology can solve real-world problems, and it has evolved into a career 
-                focused on creating intuitive, scalable, and impactful digital solutions.
+                Recent Digital Business and Data Science graduate with professional experience as a Data Management 
+                and Software Engineer. Combines strong analytical foundations with practical software development 
+                skills in full-stack development, database management and system integration. My goal is to apply my 
+                technical expertise and business analytics background to solve complex challenges and drive 
+                data-driven innovation in a dynamic role. Experience in collaborating with international teams and 
+                designing customer support solutions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I specialize in modern web technologies including React, Node.js, and cloud 
-                platforms. What drives me is the opportunity to work on diverse projects that 
-                challenge me to learn new technologies and approaches. I believe in writing 
-                clean, maintainable code and am always eager to share knowledge with fellow developers.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me exploring new frameworks, contributing to 
-                open-source projects, or writing about my experiences on my blog. I'm constantly 
-                learning and adapting to the ever-evolving landscape of software development.
+                Born in Zimbabwe on November 6, 2004, I bring a unique international perspective to my work, 
+                with fluency in multiple languages and experience working across different cultural contexts. 
+                My academic journey included practical projects ranging from weather application development to 
+                machine learning platforms for housing optimization.
               </p>
             </div>
           </section>
@@ -194,7 +168,7 @@ export default function AboutPage() {
                             <Calendar className="h-4 w-4" />
                             {edu.period}
                           </div>
-                          <div>GPA: {edu.gpa}</div>
+                          {edu.gpa && <div>GPA: {edu.gpa}</div>}
                         </div>
                       </div>
                       <GraduationCap className="h-5 w-5 text-muted-foreground" />
@@ -243,6 +217,28 @@ export default function AboutPage() {
 
         {/* Sidebar */}
         <div className="space-y-8">
+          {/* Profile Photo */}
+          <Card>
+            <CardContent className="pt-6">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="relative w-48 h-48 rounded-full overflow-hidden">
+                  <Image
+                    src="/shanise.png"
+                    alt="Shanise Mukwashi"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Shanise Mukwashi</h3>
+                  <p className="text-sm text-muted-foreground">Data Management & Software Engineer</p>
+                  <p className="text-xs text-muted-foreground mt-1">Nürnberg, Germany</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Contact Info */}
           <Card>
             <CardHeader>
@@ -256,11 +252,17 @@ export default function AboutPage() {
                 </Link>
               </Button>
               <Button variant="outline" className="w-full" asChild>
-                <Link href="/resume.pdf" target="_blank">
+                <Link href="https://projects-blog-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" />
-                  Download CV
+                  View Projects Blog
                 </Link>
               </Button>
+              <div className="text-sm text-muted-foreground space-y-2">
+                <p><strong>Email:</strong> shanirumuk@gmail.com</p>
+                <p><strong>Location:</strong> Nürnberg, Germany</p>
+                <p><strong>GitHub:</strong> <Link href="https://github.com/shanirumuk" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">github.com/shanirumuk</Link></p>
+                <p><strong>LinkedIn:</strong> <Link href="https://linkedin.com/in/shanise-mukwashi-139159199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn Profile</Link></p>
+              </div>
             </CardContent>
           </Card>
 
@@ -295,18 +297,18 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between">
-                <span className="text-sm text-muted-foreground">Years of Experience</span>
-                <span className="font-semibold">3+</span>
+                <span className="text-sm text-muted-foreground">Age</span>
+                <span className="font-semibold">20</span>
               </div>
               <Separator />
               <div className="flex justify-between">
-                <span className="text-sm text-muted-foreground">Projects Completed</span>
-                <span className="font-semibold">25+</span>
+                <span className="text-sm text-muted-foreground">Nationality</span>
+                <span className="font-semibold">Zimbabwean</span>
               </div>
               <Separator />
               <div className="flex justify-between">
-                <span className="text-sm text-muted-foreground">Technologies Used</span>
-                <span className="font-semibold">30+</span>
+                <span className="text-sm text-muted-foreground">Languages Spoken</span>
+                <span className="font-semibold">4</span>
               </div>
               <Separator />
               <div className="flex justify-between">
@@ -322,8 +324,9 @@ export default function AboutPage() {
       <div className="mt-16 text-center">
         <h2 className="text-2xl font-bold mb-4">Let's Build Something Amazing Together</h2>
         <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-          I'm always interested in new opportunities and collaborations. 
-          Whether you have a project in mind or just want to connect, I'd love to hear from you.
+          I'm always interested in new opportunities and collaborations in data management, 
+          software engineering, and system integration. Whether you have a project in mind or 
+          just want to connect, I'd love to hear from you.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" asChild>

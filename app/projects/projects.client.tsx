@@ -1,0 +1,177 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Filter } from "lucide-react";
+
+// Types for the data passed from server component
+export type ProjectSummary = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  category: string;
+  categories?: string[];
+  featured: boolean;
+  status: string;
+  year: string | number;
+  duration: string;
+};
+
+export type ProjectCategory = {
+  id: string;
+  name: string;
+  count: number;
+};
+
+interface ProjectsClientProps {
+  allProjects: ProjectSummary[];
+  categories: ProjectCategory[];
+}
+
+export default function ProjectsClient({ allProjects, categories }: ProjectsClientProps) {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  
+  const filteredProjects = selectedCategory === "all" 
+    ? allProjects 
+    : allProjects.filter(project => {
+        // Check if project has multiple categories
+        if (project.categories && Array.isArray(project.categories)) {
+          return project.categories.includes(selectedCategory);
+        }
+        // Fallback to single category
+        return project.category === selectedCategory;
+      });
+  
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">All Projects</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          A comprehensive collection of my development work, showcasing various technologies 
+          and problem-solving approaches across different domains.
+        </p>
+      </div>
+
+      {/* Filters */}
+      <div className="mb-8">
+        <div className="flex flex-wrap gap-2 justify-center">
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              variant={selectedCategory === category.id ? "default" : "outline"}
+              className="flex items-center gap-2"
+              onClick={() => setSelectedCategory(category.id)}
+            >
+              <Filter className="h-4 w-4" />
+              {category.name}
+              <Badge variant="secondary" className="ml-1">
+                {category.count}
+              </Badge>
+            </Button>
+          ))}
+        </div>
+      </div>
+
+      {/* Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="text-center p-4 rounded-lg bg-muted/50">
+          <div className="text-2xl font-bold text-primary">{filteredProjects.length}</div>
+          <div className="text-sm text-muted-foreground">
+            {selectedCategory === "all" ? "Total Projects" : "Filtered Projects"}
+          </div>
+        </div>
+        <div className="text-center p-4 rounded-lg bg-muted/50">
+          <div className="text-2xl font-bold text-primary">{filteredProjects.filter(p => p.featured).length}</div>
+          <div className="text-sm text-muted-foreground">Featured</div>
+        </div>
+        <div className="text-center p-4 rounded-lg bg-muted/50">
+          <div className="text-2xl font-bold text-primary">{new Set(filteredProjects.flatMap(p => p.tags)).size}</div>
+          <div className="text-sm text-muted-foreground">Technologies</div>
+        </div>
+        <div className="text-center p-4 rounded-lg bg-muted/50">
+          <div className="text-2xl font-bold text-primary">{new Set(filteredProjects.map(p => p.category)).size}</div>
+          <div className="text-sm text-muted-foreground">Categories</div>
+        </div>
+      </div>
+
+      {/* Projects Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredProjects.map((project) => (
+          <Card key={project.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <div className="aspect-video bg-white border border-border rounded-md mb-4 relative overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                {project.featured && (
+                  <Badge className="absolute top-2 right-2">Featured</Badge>
+                )}
+              </div>
+              <div className="flex items-center justify-between mb-2">
+                <CardTitle className="line-clamp-1 group-hover:text-primary transition-colors">
+                  {project.title}
+                </CardTitle>
+                <Badge variant="outline" className="text-xs">
+                  {project.year}
+                </Badge>
+              </div>
+              <CardDescription className="line-clamp-3">
+                {project.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span className="font-medium">Duration:</span>
+                  <span>{project.duration}</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 4).map((tag) => (
+                    <Badge key={tag} variant="secondary" className="text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                  {project.tags.length > 4 && (
+                    <Badge variant="outline" className="text-xs">
+                      +{project.tags.length - 4} more
+                    </Badge>
+                  )}
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Button variant="ghost" className="w-full group-hover:bg-accent" asChild>
+                <Link href={`/projects/${project.id}`}>
+                  View Project Details <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+
+      {/* Call to Action */}
+      <div className="text-center mt-16">
+        <h2 className="text-2xl font-bold mb-4">Interested in Working Together?</h2>
+        <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+          These projects represent my journey as a developer. I'm always excited to take on new challenges 
+          and create innovative solutions.
+        </p>
+        <Button size="lg" asChild>
+          <Link href="/contact">Let's Discuss Your Project</Link>
+        </Button>
+      </div>
+    </div>
+  );
+}

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Code, Database, Globe, Smartphone, Cloud, Wrench, ArrowRight } from "lucide-react";
+import { Code, Database, Globe, Smartphone, Cloud, Wrench, ArrowRight, BarChart3, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Skills & Technologies",
@@ -14,96 +14,122 @@ export const metadata: Metadata = {
 export default function SkillsPage() {
   const skillCategories = [
     {
+      id: "programming",
+      title: "Programming Languages",
+      icon: Code,
+      description: "Core programming languages and paradigms",
+      skills: [
+        { name: "TypeScript", level: 90, years: 2, projects: 8 },
+        { name: "Python", level: 84, years: 3, projects: 4 },
+        { name: "SQL", level: 85, years: 2, projects: 7 },
+        { name: "JavaScript", level: 88, years: 2.5, projects: 6 },
+        { name: "Dart", level: 70, years: 1, projects: 1 },
+      ]
+    },
+    {
       id: "frontend",
       title: "Frontend Development",
       icon: Globe,
-      description: "Creating beautiful, responsive, and interactive user interfaces",
+      description: "Creating responsive web applications and user interfaces",
       skills: [
-        { name: "React", level: 95, years: 3, projects: 15 },
-        { name: "Next.js", level: 90, years: 2, projects: 8 },
-        { name: "TypeScript", level: 88, years: 2.5, projects: 12 },
-        { name: "Vue.js", level: 75, years: 1, projects: 3 },
-        { name: "Tailwind CSS", level: 92, years: 2, projects: 10 },
-        { name: "SASS/SCSS", level: 85, years: 3, projects: 8 },
-        { name: "JavaScript", level: 95, years: 4, projects: 20 },
-        { name: "HTML5", level: 98, years: 4, projects: 25 },
-        { name: "CSS3", level: 95, years: 4, projects: 25 },
+        { name: "Next.js", level: 92, years: 2, projects: 6 },
+        { name: "React", level: 90, years: 2, projects: 5 },
+        { name: "Tailwind CSS", level: 88, years: 2, projects: 6 },
+        { name: "HTML5", level: 90, years: 3, projects: 8 },
+        { name: "CSS3", level: 85, years: 3, projects: 8 },
+        { name: "Responsive Design", level: 88, years: 2, projects: 7 },
       ]
     },
     {
       id: "backend",
-      title: "Backend Development",
+      title: "Backend & APIs",
       icon: Database,
-      description: "Building robust APIs and server-side applications",
+      description: "Server-side development and API integration",
       skills: [
-        { name: "Node.js", level: 90, years: 3, projects: 12 },
-        { name: "Express.js", level: 88, years: 3, projects: 10 },
-        { name: "Python", level: 85, years: 2, projects: 6 },
-        { name: "FastAPI", level: 80, years: 1, projects: 3 },
-        { name: "PostgreSQL", level: 85, years: 2.5, projects: 8 },
-        { name: "MongoDB", level: 82, years: 2, projects: 6 },
-        { name: "Redis", level: 75, years: 1, projects: 4 },
-        { name: "GraphQL", level: 70, years: 1, projects: 2 },
-        { name: "REST APIs", level: 95, years: 3, projects: 15 },
+        { name: "Node.js", level: 85, years: 2, projects: 5 },
+        { name: "FastAPI", level: 80, years: 1, projects: 2 },
+        { name: "REST APIs", level: 92, years: 2, projects: 6 },
+        { name: "Webhooks", level: 95, years: 1, projects: 3 },
+        { name: "API Integration", level: 90, years: 2, projects: 5 },
+        { name: "Authentication Systems", level: 88, years: 1.5, projects: 3 },
+      ]
+    },
+    {
+      id: "database",
+      title: "Database Management",
+      icon: Database,
+      description: "Database design and management systems",
+      skills: [
+        { name: "Supabase", level: 90, years: 1.5, projects: 6 },
+        { name: "PostgreSQL", level: 85, years: 2, projects: 5 },
+        { name: "Redis", level: 70, years: 1, projects: 4 },
+        { name: "Database Design", level: 85, years: 2, projects: 6 },
+        { name: "Data Management", level: 88, years: 2, projects: 7 },
       ]
     },
     {
       id: "mobile",
       title: "Mobile Development",
       icon: Smartphone,
-      description: "Cross-platform mobile app development",
+      description: "Native and cross-platform mobile applications",
       skills: [
-        { name: "React Native", level: 85, years: 2, projects: 5 },
-        { name: "Expo", level: 80, years: 2, projects: 4 },
-        { name: "Flutter", level: 65, years: 0.5, projects: 1 },
-        { name: "iOS Development", level: 60, years: 1, projects: 2 },
-        { name: "Android Development", level: 55, years: 0.5, projects: 1 },
+        { name: "Flutter", level: 70, years: 1, projects: 1 },
+        { name: "Android Studio", level: 70, years: 1, projects: 1 },
+        { name: "Material Design", level: 78, years: 1, projects: 1 },
+        { name: "Mobile UI/UX", level: 75, years: 1, projects: 1 },
+      ]
+    },
+    {
+      id: "data",
+      title: "Data Science & Analytics",
+      icon: BarChart3,
+      description: "Data analysis, machine learning, and business intelligence",
+      skills: [
+        { name: "Machine Learning", level: 85, years: 2, projects: 2 },
+        { name: "Data Analytics", level: 88, years: 3, projects: 4 },
+        { name: "Statistical Analysis", level: 82, years: 3, projects: 3 },
+        { name: "Power BI", level: 55, years: 1, projects: 1 },
+        { name: "Pandas", level: 80, years: 2, projects: 2 },
+        { name: "Scikit-learn", level: 78, years: 1.5, projects: 2 },
+        { name: "XGBoost", level: 75, years: 1, projects: 1 },
       ]
     },
     {
       id: "cloud",
-      title: "Cloud & DevOps",
+      title: "Cloud & Deployment",
       icon: Cloud,
-      description: "Cloud infrastructure and deployment automation",
+      description: "Cloud platforms and deployment strategies",
       skills: [
-        { name: "AWS", level: 80, years: 2, projects: 8 },
-        { name: "Google Cloud", level: 75, years: 1, projects: 3 },
-        { name: "Docker", level: 85, years: 2, projects: 10 },
-        { name: "Kubernetes", level: 65, years: 1, projects: 2 },
-        { name: "CI/CD", level: 80, years: 2, projects: 8 },
-        { name: "Terraform", level: 60, years: 0.5, projects: 2 },
-        { name: "Vercel", level: 90, years: 2, projects: 12 },
-        { name: "Netlify", level: 85, years: 2, projects: 6 },
+        { name: "Vercel", level: 90, years: 2, projects: 6 },
+        { name: "Git", level: 90, years: 3, projects: 9 },
+        { name: "System Integration", level: 88, years: 2, projects: 5 },
+        { name: "CI/CD", level: 75, years: 1, projects: 3 },
       ]
     },
     {
       id: "tools",
-      title: "Tools & Frameworks",
+      title: "Development Tools",
       icon: Wrench,
-      description: "Development tools and testing frameworks",
+      description: "Development environments and productivity tools",
       skills: [
-        { name: "Git", level: 95, years: 4, projects: 25 },
-        { name: "VS Code", level: 98, years: 4, projects: 25 },
-        { name: "Jest", level: 85, years: 2, projects: 10 },
-        { name: "Cypress", level: 75, years: 1, projects: 4 },
-        { name: "Webpack", level: 70, years: 2, projects: 5 },
-        { name: "Vite", level: 85, years: 1, projects: 6 },
-        { name: "Figma", level: 80, years: 2, projects: 8 },
-        { name: "Postman", level: 90, years: 3, projects: 15 },
+        { name: "Cursor/VS Code", level: 90, years: 3, projects: 10 },
+        { name: "Android Studio", level: 75, years: 1, projects: 1 },
+        { name: "Microsoft Office", level: 85, years: 5, projects: 8 },
+        { name: "Zammad API", level: 80, years: 0.5, projects: 1 },
+        { name: "Postman", level: 85, years: 1.5, projects: 5 },
       ]
     },
     {
-      id: "programming",
-      title: "Programming Languages",
-      icon: Code,
-      description: "Core programming languages and paradigms",
+      id: "business",
+      title: "Business & Research",
+      icon: Briefcase,
+      description: "Business analysis and research methodologies",
       skills: [
-        { name: "JavaScript", level: 95, years: 4, projects: 25 },
-        { name: "TypeScript", level: 88, years: 2.5, projects: 12 },
-        { name: "Python", level: 85, years: 2, projects: 6 },
-        { name: "Java", level: 70, years: 2, projects: 3 },
-        { name: "SQL", level: 85, years: 3, projects: 12 },
-        { name: "Bash", level: 75, years: 2, projects: 8 },
+        { name: "Digital Business", level: 88, years: 4, projects: 6 },
+        { name: "Research Methodology", level: 85, years: 6, projects: 3 },
+        { name: "Financial Analysis", level: 80, years: 2, projects: 2 },
+        { name: "Project Management", level: 82, years: 2, projects: 7 },
+        { name: "Cross-cultural Communication", level: 90, years: 8, projects: 9 },
       ]
     },
   ];
@@ -142,11 +168,11 @@ export default function SkillsPage() {
           <div className="text-sm text-muted-foreground">Total Skills</div>
         </div>
         <div className="text-center p-6 rounded-lg bg-muted/50">
-          <div className="text-3xl font-bold text-primary mb-2">4+</div>
+          <div className="text-3xl font-bold text-primary mb-2">3+</div>
           <div className="text-sm text-muted-foreground">Years Experience</div>
         </div>
         <div className="text-center p-6 rounded-lg bg-muted/50">
-          <div className="text-3xl font-bold text-primary mb-2">25+</div>
+          <div className="text-3xl font-bold text-primary mb-2">10+</div>
           <div className="text-sm text-muted-foreground">Projects Built</div>
         </div>
         <div className="text-center p-6 rounded-lg bg-muted/50">
@@ -232,15 +258,15 @@ export default function SkillsPage() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span>Rust</span>
+                  <span>Advanced Authentication</span>
                   <Badge variant="outline">In Progress</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Machine Learning</span>
+                  <span>AI Integration</span>
                   <Badge variant="outline">Exploring</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Web3 Development</span>
+                  <span>Microservices Architecture</span>
                   <Badge variant="outline">Planning</Badge>
                 </div>
               </div>
@@ -254,16 +280,16 @@ export default function SkillsPage() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span>AWS Certification</span>
-                  <Badge>2024</Badge>
+                  <span>BSc Digital Business & Data Science</span>
+                  <Badge>2025</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>React Advanced Patterns</span>
-                  <Badge>2024</Badge>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Docker Mastery</span>
+                  <span>Project Management Certification</span>
                   <Badge>2023</Badge>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Aviation API Integration Mastery</span>
+                  <Badge>2024</Badge>
                 </div>
               </div>
             </CardContent>
@@ -275,11 +301,11 @@ export default function SkillsPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <div>Technical Documentation</div>
-                <div>Online Courses & Tutorials</div>
-                <div>Open Source Contributions</div>
-                <div>Developer Communities</div>
-                <div>Technical Books & Articles</div>
+                <div>University Research Projects</div>
+                <div>Industry API Documentation</div>
+                <div>Hands-on Enterprise Development</div>
+                <div>International Team Collaboration</div>
+                <div>Professional Certifications</div>
               </div>
             </CardContent>
           </Card>

@@ -8,26 +8,26 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t bg-background">
-      <div className="container py-8 md:py-12">
+      <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand & Description */}
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold">Shanise Ruvimbo Mukwashi</h3>
               <p className="text-sm text-muted-foreground mt-2">
-                Full-stack developer passionate about creating innovative solutions 
-                and sharing knowledge through detailed project documentation.
+                Data Management and Software Engineer with expertise in full-stack development, 
+                data analytics, and system integration.
               </p>
             </div>
             <div className="flex space-x-2">
               <Button variant="outline" size="icon" asChild>
-                <Link href="https://github.com/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/shanirumuk" target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
                   <span className="sr-only">GitHub</span>
                 </Link>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <Link href="https://linkedin.com/in/shanise-mukwashi" target="_blank" rel="noopener noreferrer">
+                <Link href="https://linkedin.com/in/shanise-mukwashi-139159199" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
