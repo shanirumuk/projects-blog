@@ -3,37 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Code, Database, Globe, Smartphone, Terminal, Zap } from "lucide-react";
+import { getFeaturedProjects } from "@/data/projects";
 
 export default function Home() {
-  const featuredProjects = [
-    {
-      id: "vibi-clerk-authentication-system",
-      title: "ViBI Aviation User Management - Clerk",
-      description: "Enterprise-grade authentication system for aviation industry with multi-tenant support",
-      image: "/projects/vibi-clerk-dashboard.jpg",
-      tags: ["Next.js 14", "Clerk", "Supabase", "PostgreSQL"],
-      category: "web",
-      featured: true,
-    },
-    {
-      id: "vibi-supertokens-authentication-system",
-      title: "ViBI Aviation User Management - SuperTokens",
-      description: "Self-hosted authentication migration for Russian market compliance (3-week timeline)",
-      image: "/projects/vibi-supertokens-dashboard.jpg",
-      tags: ["SuperTokens", "Self-Hosted", "PostgreSQL", "Redis"],
-      category: "web",
-      featured: true,
-    },
-    {
-      id: "vbi-user-analytics-system",
-      title: "ViBI User Analytics & Logging System",
-      description: "Comprehensive user action tracking system for aviation baggage interlining platform with PostHog integration",
-      image: "/projects/vbi-analytics-dashboard.jpg",
-      tags: ["Next.js 14", "PostHog", "Clerk Auth", "Supabase"],
-      category: "web",
-      featured: true,
-    },
-  ];
+  const featuredProjects = getFeaturedProjects().map(project => ({
+    id: project.id,
+    title: project.title,
+    description: project.description,
+    image: project.image,
+    tags: project.tags.slice(0, 4), // Limit tags for home page display
+    category: project.category,
+    featured: project.featured,
+  }));
 
   const skills = [
     { icon: Globe, name: "Web Development", description: "React, Next.js, Vue.js" },

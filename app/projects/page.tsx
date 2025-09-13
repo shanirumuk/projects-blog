@@ -4,56 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Code, Filter, Search } from "lucide-react";
+import { getAllProjectSummaries, getProjectCategories } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "All Projects",
   description: "Explore all my development projects, from web applications to mobile apps and APIs",
 };
 
-// This would typically come from a database or CMS
-const allProjects = [
-  {
-    id: "vibi-clerk-authentication-system",
-    title: "ViBI Aviation User Management - Clerk Implementation",
-    description: "Enterprise-grade user authentication system for aviation baggage interlining with multi-tenant organization support and complex role-based access control.",
-    image: "/projects/vibi-clerk-dashboard.jpg",
-    tags: ["Next.js 14", "TypeScript", "Clerk", "Supabase", "PostgreSQL", "Redis"],
-    category: "web",
-    featured: true,
-    status: "completed",
-    year: "2024",
-    duration: "5 months",
-  },
-  {
-    id: "vibi-supertokens-authentication-system",
-    title: "ViBI Aviation User Management - SuperTokens Implementation", 
-    description: "Self-hosted authentication migration for Russian market compliance with enterprise-grade security and department-based access control.",
-    image: "/projects/vibi-supertokens-dashboard.jpg",
-    tags: ["SuperTokens", "Next.js 14", "PostgreSQL 16", "Self-Hosted"],
-    category: "web",
-    featured: true,
-    status: "completed",
-    year: "2025",
-    duration: "2 months",
-  },
-  {
-    id: "vbi-user-analytics-system",
-    title: "ViBI User Analytics & Logging System",
-    description: "Comprehensive user action tracking system for aviation baggage interlining platform with PostHog integration",
-    image: "/projects/vbi-analytics-dashboard.jpg",
-    tags: ["Next.js 14", "TypeScript", "PostHog", "Clerk Auth", "Supabase", "Redis"],
-    category: "web",
-    featured: true,
-    status: "paused",
-    year: "2024",
-    duration: "6 weeks",
-  },
-];
-
-const categories = [
-  { id: "all", name: "All Projects", count: allProjects.length },
-  { id: "web", name: "Web Development", count: allProjects.filter(p => p.category === "web").length },
-];
+// Load project data from centralized data files
+const allProjects = getAllProjectSummaries();
+const categories = getProjectCategories();
 
 export default function ProjectsPage() {
   return (

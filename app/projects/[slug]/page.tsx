@@ -6,167 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Calendar, Clock, ExternalLink, Github, Globe, Users } from "lucide-react";
+import { getProject, allProjectsData } from "@/data/projects";
 
-// This would typically come from a database or CMS
-const projectsData = {
-  "vibi-clerk-authentication-system": {
-    id: "vibi-clerk-authentication-system",
-    title: "ViBI Aviation User Management - Clerk Implementation",
-    description: "Enterprise-grade user authentication system for aviation baggage interlining with multi-tenant organization support",
-    longDescription: `Built a comprehensive user management system for ViBI (Virtual Baggage Interlining), an aviation industry platform that connects airlines, airports, OTAs, and ground handling agents. The system provides enterprise-grade authentication with complex organizational hierarchies and role-based access control.
-
-The platform manages five distinct organization types (ViBI system owner, Airlines, Airports, OTAs, and Handling Agents) with a sophisticated three-tier permission system: Organization Type → Department → Role. Each organization maintains complete data isolation while enabling secure inter-organizational baggage interlining operations.
-
-Key achievement: Successfully implemented a scalable authentication architecture that handles complex aviation industry workflows while maintaining regulatory compliance and audit trails required for international baggage operations.`,
-    image: "/projects/vibi-clerk-dashboard.jpg",
-    tags: ["Next.js 14", "TypeScript", "Clerk", "Supabase", "PostgreSQL", "Redis", "Vercel", "Tailwind CSS", "React Hook Form", "Zod"],
-    category: "web",
-    featured: true,
-    status: "completed",
-    year: "2025",
-    duration: "5 months",
-    challenges: [
-      "Designing a multi-tenant architecture supporting 5 different organization types with complex hierarchical permissions",
-      "Implementing real-time webhook synchronization between Clerk and Supabase for consistent user data across systems",
-      "Creating a three-tier access control system (Organization → Department → Role) while maintaining performance",
-      "Ensuring aviation industry regulatory compliance with audit trails and data isolation requirements",
-      "Building intuitive admin interfaces for managing complex organizational structures and permissions",
-      "Handling JWT token validation and custom claims integration for Supabase Row Level Security policies"
-    ],
-    learnings: [
-      "Mastered Clerk's webhook system and custom claims for complex multi-tenant scenarios",
-      "Deep understanding of Supabase Row Level Security (RLS) policies for data isolation at scale",
-      "Advanced Next.js 14 App Router patterns for server-side authentication and middleware",
-      "Redis integration strategies for session management and caching in enterprise applications",
-      "Aviation industry data privacy requirements and international compliance standards",
-      "Complex state management patterns for hierarchical permission systems"
-    ],
-    features: [
-      "Multi-tenant organization support with complete data isolation",
-      "Three-tier permission system: Organization Type → Department → Role",
-      "Visual access control matrix with real-time permission preview",
-      "Automated user provisioning and deprovisioning via webhooks",
-      "Department-specific dashboard routing and data filtering",
-      "Enterprise SSO integration with custom authentication flows",
-      "Comprehensive audit logging for compliance requirements",
-      "Real-time session management with Redis caching",
-      "Mobile-responsive admin interface with role-based UI adaptation",
-      "Bulk user import/export with department assignment validation"
-    ],
-    techDetails: {
-      frontend: "Next.js 14 with App Router and TypeScript, leveraging server components for optimal performance. Clerk's React components integrated with custom permission wrappers. Tailwind CSS for responsive design with shadcn/ui component library. Real-time UI updates using React Query for cache management.",
-      backend: "Next.js API routes handling Clerk webhooks, Supabase client with custom JWT validation middleware. PostgreSQL database with complex relational schema supporting multi-tenant architecture. Redis for session caching and rate limiting. Row Level Security policies for data isolation.",
-      deployment: "Deployed on Vercel with automatic deployments from GitHub. Supabase hosted PostgreSQL with Redis Cloud for caching. Environment-specific configurations for development, staging, and production with proper secret management.",
-      testing: "Integration testing for webhook endpoints and permission systems. End-to-end testing with Playwright for critical user flows. Load testing for multi-tenant scenarios and user provisioning workflows."
-    },
-    demoUrl: null, // No demo access for proprietary ViBI systems
-    githubUrl: null // No code access for proprietary ViBI systems
-  },
-  "vibi-supertokens-authentication-system": {
-    id: "vibi-supertokens-authentication-system",
-    title: "ViBI Aviation User Management - SuperTokens Self-Hosted Implementation",
-    description: "Self-hosted authentication migration for Russian market compliance with enterprise-grade security and department-based access control",
-    longDescription: `Migrated ViBI's authentication system from Clerk to SuperTokens to meet Russian data residency requirements while maintaining enterprise-grade security and complex organizational hierarchies. This self-hosted solution provides complete data sovereignty for aviation industry clients operating in regulated markets.
-
-The project involved rebuilding the entire authentication infrastructure within a 2-3 week timeline, leveraging SuperTokens' pre-built React components while maintaining the sophisticated three-tier permission system and multi-tenant architecture that supports airlines, airports, OTAs, and handling agents.
-
-Successfully deployed to Russian data centers with full webhook synchronization, maintaining seamless user experience during the migration while ensuring compliance with local data protection regulations. The solution demonstrates expertise in authentication system architecture, international compliance requirements, and rapid enterprise software migration.`,
-    image: "/projects/vibi-supertokens-dashboard.jpg",
-    tags: ["SuperTokens", "Next.js 14", "TypeScript", "PostgreSQL 16", "Redis 7", "Node.js 20", "React", "JWT", "Webhooks", "Self-Hosted"],
-    category: "web",
-    featured: true,
-    status: "completed",
-    year: "2024",
-    duration: "2 months",
-    challenges: [
-      "Migrating from hosted Clerk to self-hosted SuperTokens within 2-3 week deadline for Russian market compliance",
-      "Maintaining complex department hierarchy and access control system during authentication provider migration",
-      "Implementing custom JWT claims compatible with existing Supabase RLS policies without breaking changes",
-      "Setting up self-hosted infrastructure in Russian data centers with proper security hardening",
-      "Preserving all existing user sessions and data while switching authentication backends",
-      "Building webhook synchronization system for real-time data consistency between SuperTokens and business database"
-    ],
-    learnings: [
-      "SuperTokens architecture and self-hosting deployment strategies for enterprise environments",
-      "International data residency compliance requirements for authentication systems",
-      "JWT custom claims implementation for complex multi-tenant authorization scenarios",
-      "PostgreSQL performance optimization for authentication workloads at enterprise scale",
-      "Redis session management patterns for self-hosted authentication systems",
-      "Rapid enterprise software migration techniques with zero-downtime deployment strategies"
-    ],
-    features: [
-      "Self-hosted authentication with full data sovereignty",
-      "Russian data center deployment for regulatory compliance",
-      "Pre-built React UI components with custom department-aware theming",
-      "JWT custom claims integration maintaining existing Supabase compatibility",
-      "Real-time webhook synchronization with PostgreSQL business database",
-      "Department-based session management and access control",
-      "Enterprise-grade session security with Redis clustering",
-      "Seamless user migration from Clerk without data loss",
-      "Multi-factor authentication support for high-security departments",
-      "Custom authentication flows for aviation industry workflows"
-    ],
-    techDetails: {
-      frontend: "SuperTokens pre-built React components integrated with Next.js 14 App Router. Custom department-aware dashboard with TypeScript for type safety. Maintained existing Tailwind CSS styling system with SuperTokens theme customization.",
-      backend: "SuperTokens Core self-hosted on Node.js 20+ with PostgreSQL 16 as the authentication database. Custom webhook handlers for real-time synchronization with business database. JWT custom claims service for Supabase compatibility. Redis 7 clustering for distributed session management.",
-      deployment: "Self-hosted deployment in Russian data centers using Docker containers with Kubernetes orchestration. PostgreSQL database with proper backup and replication strategies. Redis clustering for high availability. CI/CD pipeline with GitLab for deployment automation.",
-      testing: "Comprehensive migration testing with parallel system validation. Load testing for Russian infrastructure with realistic traffic patterns. Security penetration testing for self-hosted setup. User acceptance testing with department representatives across all organization types."
-    },
-    demoUrl: null, // No demo access for proprietary ViBI systems
-    githubUrl: null // No code access for proprietary ViBI systems
-  },
-  "vbi-user-analytics-system": {
-    id: "vbi-user-analytics-system",
-    title: "ViBI User Analytics & Logging System",
-    description: "Comprehensive user action tracking system for aviation baggage interlining platform with PostHog integration",
-    longDescription: `Developed a sophisticated user analytics and logging system for a Virtual Baggage Interline (ViBI) platform serving the aviation industry. The system provides real-time tracking of user interactions, comprehensive event logging, and detailed analytics to optimize user experience and business operations.
-
-The platform serves airlines, airports, and ground handling companies, requiring precise tracking of baggage routing decisions, flight selections, and service bookings. The analytics system captures both authenticated user actions through JWT verification and anonymous visitor behavior across the public website.
-
-Built with a focus on enterprise-grade reliability, the system includes error boundaries, retry mechanisms, rate limiting, and comprehensive privacy controls to ensure GDPR compliance while delivering actionable insights for product development and business intelligence.`,
-    image: "/projects/vbi-analytics-dashboard.jpg",
-    tags: ["Next.js 14", "TypeScript", "PostHog", "Clerk Auth", "Supabase", "Redis", "Vercel", "JWT", "React Hooks", "HOC Pattern", "Middleware"],
-    category: "web",
-    featured: true,
-    status: "paused",
-    year: "2024",
-    duration: "6 weeks",
-    challenges: [
-      "Implementing enterprise-grade user tracking without impacting application performance",
-      "Designing a flexible analytics architecture supporting both HOC and hooks patterns for different component types",
-      "Ensuring GDPR compliance while capturing meaningful user behavior data in a multi-tenant aviation platform",
-      "Building robust error handling and retry mechanisms for mission-critical baggage tracking operations",
-      "Creating domain-specific event tracking for complex aviation workflows including route validation and flight selection",
-      "Integrating seamlessly with Clerk authentication and JWT verification for secure user identification"
-    ],
-    learnings: [
-      "Advanced PostHog implementation patterns including custom proxy setup and session recording optimization",
-      "Enterprise analytics architecture design balancing comprehensive tracking with privacy requirements",
-      "Building reusable analytics components using both Higher-Order Components and custom React hooks",
-      "Performance optimization techniques for high-frequency event tracking in complex aviation workflows",
-      "JWT-based user identification strategies for multi-organization enterprise platforms",
-      "Error boundary implementation and analytics event queuing with exponential backoff retry logic"
-    ],
-    features: [
-      "Real-time user action tracking with automatic page view monitoring",
-      "Multi-pattern component analytics (HOC, hooks, hybrid approaches)",
-      "Enterprise user identification with Clerk integration and JWT verification",
-      "Domain-specific aviation events (route creation, flight selection, baggage tracking)",
-      "Comprehensive error tracking with automatic retry and rate limiting",
-      "GDPR-compliant data collection with configurable privacy controls",
-      "Performance monitoring with session recording and heatmap generation",
-      "Multi-tenant organization context tracking for enterprise aviation clients"
-    ],
-    techDetails: {
-      frontend: "Built with Next.js 14 App Router and TypeScript, implementing a sophisticated analytics layer using PostHog React SDK. Features custom React hooks (useAnalytics, usePostHog) and Higher-Order Components for flexible event tracking. Includes automatic page view tracking, form interaction monitoring, and component-level analytics with error boundaries. The frontend architecture supports both authenticated portal analytics and anonymous public website tracking.",
-      backend: "Leverages Next.js API routes with Clerk authentication middleware for secure analytics event processing. Implements custom PostHog proxy for enhanced data collection and GDPR compliance. Features Redis caching for analytics metadata and Supabase integration for persistent analytics configuration. The backend includes JWT verification for user identification and multi-organization context management with rate limiting and error handling.",
-      deployment: "Deployed on Vercel with environment-specific PostHog configurations supporting development, staging, and production analytics tracking. Features automatic middleware routing for analytics proxy endpoints and comprehensive error monitoring. The deployment includes PostHog feature flags integration for A/B testing and gradual analytics feature rollouts across aviation industry clients.",
-      testing: "Comprehensive analytics testing suite including PostHog event verification, component-level analytics testing, and integration tests for authentication flows. Features development-mode console logging for analytics debugging and custom testing utilities for validating event properties and user identification. Includes performance testing for high-frequency aviation workflow events and error simulation for retry mechanism validation."
-    },
-    demoUrl: null, // No demo access for proprietary ViBI systems
-    githubUrl: null // No code access for proprietary ViBI systems
-  },
-};
+// Use centralized project data
+const projectsData = allProjectsData;
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -244,7 +87,15 @@ export default async function ProjectPage({ params }: Props) {
         </div>
 
         <div className="flex flex-wrap gap-4">
-          
+          {project.demoUrl && (
+            <Button asChild>
+              <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                <Globe className="mr-2 h-4 w-4" />
+                Live Demo
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          )}
           {project.githubUrl && (
             <Button variant="outline" asChild>
               <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -367,6 +218,15 @@ export default async function ProjectPage({ params }: Props) {
               <CardTitle>Project Links</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
+              {project.demoUrl && (
+                <Button className="w-full" asChild>
+                  <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                    <Globe className="mr-2 h-4 w-4" />
+                    Live Demo
+                    <ExternalLink className="ml-auto h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
               {project.githubUrl && (
                 <Button variant="outline" className="w-full" asChild>
                   <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
