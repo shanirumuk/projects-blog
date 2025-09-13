@@ -47,5 +47,6 @@ Built with a focus on enterprise-grade reliability, the system includes error bo
     testing: "Comprehensive analytics testing suite including PostHog event verification, component-level analytics testing, and integration tests for authentication flows. Features development-mode console logging for analytics debugging and custom testing utilities for validating event properties and user identification. Includes performance testing for high-frequency aviation workflow events and error simulation for retry mechanism validation."
   },
   demoUrl: null, // No demo access for proprietary ViBI systems
-  githubUrl: null // No code access for proprietary ViBI systems
+  githubUrl: null, // No code access for proprietary ViBI systems
+  companyUrl: "https://www.vbi.travel/" // Official ViBI company website
 } as const;

@@ -105,6 +105,15 @@ export default async function ProjectPage({ params }: Props) {
               </Link>
             </Button>
           )}
+          {(project as any).companyUrl && (
+            <Button variant="outline" asChild>
+              <Link href={(project as any).companyUrl} target="_blank" rel="noopener noreferrer">
+                <Globe className="mr-2 h-4 w-4" />
+                Company Website
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
 
@@ -232,6 +241,15 @@ export default async function ProjectPage({ params }: Props) {
                   <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     Source Code
+                    <ExternalLink className="ml-auto h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+              {(project as any).companyUrl && (
+                <Button variant="outline" className="w-full" asChild>
+                  <Link href={(project as any).companyUrl} target="_blank" rel="noopener noreferrer">
+                    <Globe className="mr-2 h-4 w-4" />
+                    Company Website
                     <ExternalLink className="ml-auto h-4 w-4" />
                   </Link>
                 </Button>

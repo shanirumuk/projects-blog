@@ -54,6 +54,7 @@ This project showcases advanced backend architecture, real-time data processing,
     deployment: "Production deployment with environment-based configuration, ngrok for local development and testing, webhook endpoint accessibility requirements for third-party notifications, and proper secret management for API keys and webhook authentication tokens.",
     testing: "Postman collections for webhook endpoint testing, ngrok integration for local development testing with external APIs, database trigger testing in Supabase, and comprehensive error scenario testing including API failures, network issues, and data inconsistencies."
   },
-    demoUrl: null, // No demo access for proprietary ViBI systems
-    githubUrl: null // No code access for proprietary ViBI systems
+  demoUrl: null, // No demo access for proprietary ViBI systems
+  githubUrl: null, // No code access for proprietary ViBI systems
+  companyUrl: "https://www.vbi.travel/" // Official ViBI company website
 } as const;

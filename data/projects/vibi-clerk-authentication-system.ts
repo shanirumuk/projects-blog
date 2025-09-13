@@ -49,5 +49,6 @@ Key achievement: Successfully implemented a scalable authentication architecture
     testing: "Integration testing for webhook endpoints and permission systems. End-to-end testing with Playwright for critical user flows. Load testing for multi-tenant scenarios and user provisioning workflows."
   },
   demoUrl: null, // No demo access for proprietary ViBI systems
-  githubUrl: null // No code access for proprietary ViBI systems
+  githubUrl: null, // No code access for proprietary ViBI systems
+  companyUrl: "https://www.vbi.travel/" // Official ViBI company website
 } as const;

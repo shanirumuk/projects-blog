@@ -5,6 +5,7 @@ import { vbiUserAnalyticsSystem } from './vbi-user-analytics-system';
 import { berlinHousingOptimization } from './berlin-housing-optimization';
 import { supportSystemIntegration } from './support-system-integration';
 import { flightTrackingApiIntegration } from './flight-tracking-api-integration';
+import { rentresolvePropertyPlatform } from './rentresolve-property-platform';
 
 // Project type definition - use a union type of all project types
 export type Project = typeof vibiClerkAuthenticationSystem | 
@@ -12,7 +13,8 @@ export type Project = typeof vibiClerkAuthenticationSystem |
                      typeof vbiUserAnalyticsSystem | 
                      typeof berlinHousingOptimization | 
                      typeof supportSystemIntegration |
-                     typeof flightTrackingApiIntegration;
+                     typeof flightTrackingApiIntegration |
+                     typeof rentresolvePropertyPlatform;
 
 // All projects data
 export const allProjectsData = {
@@ -22,6 +24,7 @@ export const allProjectsData = {
   [berlinHousingOptimization.id]: berlinHousingOptimization,
   [supportSystemIntegration.id]: supportSystemIntegration,
   [flightTrackingApiIntegration.id]: flightTrackingApiIntegration,
+  [rentresolvePropertyPlatform.id]: rentresolvePropertyPlatform,
 } as const;
 
 // Helper functions

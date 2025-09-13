@@ -49,5 +49,6 @@ Successfully deployed to Russian data centers with full webhook synchronization,
     testing: "Comprehensive migration testing with parallel system validation. Load testing for Russian infrastructure with realistic traffic patterns. Security penetration testing for self-hosted setup. User acceptance testing with department representatives across all organization types."
   },
   demoUrl: null, // No demo access for proprietary ViBI systems
-  githubUrl: null // No code access for proprietary ViBI systems
+  githubUrl: null, // No code access for proprietary ViBI systems
+  companyUrl: "https://www.vbi.travel/" // Official ViBI company website
 } as const;
