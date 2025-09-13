@@ -114,6 +114,15 @@ export default async function ProjectPage({ params }: Props) {
               </Link>
             </Button>
           )}
+          {(project as any).recognitionUrl && (
+            <Button variant="outline" asChild>
+              <Link href={(project as any).recognitionUrl} target="_blank" rel="noopener noreferrer">
+                <Users className="mr-2 h-4 w-4" />
+                Recognition & Media
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
 
@@ -183,6 +192,36 @@ export default async function ProjectPage({ params }: Props) {
               ))}
             </div>
           </section>
+
+          {/* Research-specific sections */}
+          {(project as any).achievements && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Achievements & Recognition</h2>
+              <div className="space-y-4">
+                {(project as any).achievements.map((achievement: string, index: number) => (
+                  <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
+                    <div className="h-2 w-2 rounded-full bg-yellow-500 mt-2 flex-shrink-0" />
+                    <span className="text-sm font-medium">{achievement}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {(project as any).keyFindings && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Key Research Findings</h2>
+              <div className="space-y-4">
+                {(project as any).keyFindings.map((finding: string, index: number) => (
+                  <Card key={index}>
+                    <CardContent className="pt-6">
+                      <p className="text-muted-foreground">{finding}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
 
         {/* Sidebar */}
@@ -250,6 +289,15 @@ export default async function ProjectPage({ params }: Props) {
                   <Link href={(project as any).companyUrl} target="_blank" rel="noopener noreferrer">
                     <Globe className="mr-2 h-4 w-4" />
                     Company Website
+                    <ExternalLink className="ml-auto h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+              {(project as any).recognitionUrl && (
+                <Button variant="outline" className="w-full" asChild>
+                  <Link href={(project as any).recognitionUrl} target="_blank" rel="noopener noreferrer">
+                    <Users className="mr-2 h-4 w-4" />
+                    Recognition & Media
                     <ExternalLink className="ml-auto h-4 w-4" />
                   </Link>
                 </Button>

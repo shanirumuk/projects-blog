@@ -6,6 +6,7 @@ import { berlinHousingOptimization } from './berlin-housing-optimization';
 import { supportSystemIntegration } from './support-system-integration';
 import { flightTrackingApiIntegration } from './flight-tracking-api-integration';
 import { rentresolvePropertyPlatform } from './rentresolve-property-platform';
+import { backpackWeightLoadingResearch } from './backpack-weight-loading-research';
 
 // Project type definition - use a union type of all project types
 export type Project = typeof vibiClerkAuthenticationSystem | 
@@ -14,7 +15,8 @@ export type Project = typeof vibiClerkAuthenticationSystem |
                      typeof berlinHousingOptimization | 
                      typeof supportSystemIntegration |
                      typeof flightTrackingApiIntegration |
-                     typeof rentresolvePropertyPlatform;
+                     typeof rentresolvePropertyPlatform |
+                     typeof backpackWeightLoadingResearch;
 
 // All projects data
 export const allProjectsData = {
@@ -25,6 +27,7 @@ export const allProjectsData = {
   [supportSystemIntegration.id]: supportSystemIntegration,
   [flightTrackingApiIntegration.id]: flightTrackingApiIntegration,
   [rentresolvePropertyPlatform.id]: rentresolvePropertyPlatform,
+  [backpackWeightLoadingResearch.id]: backpackWeightLoadingResearch,
 } as const;
 
 // Helper functions
@@ -51,6 +54,7 @@ export const getProjectCategories = () => {
     { id: "all", name: "All Projects", count: projects.length },
     { id: "web", name: "Web Development", count: projects.filter(p => p.category === "web").length },
     { id: "api", name: "API Integration", count: projects.filter(p => p.category === "api").length },
+    { id: "research", name: "Research", count: projects.filter(p => p.category === "research").length },
   ];
   
   return categories;
