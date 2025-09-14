@@ -83,7 +83,7 @@ export default function SkillsPage() {
       id: "data",
       title: "Data Science & Analytics",
       icon: BarChart3,
-      description: "Data analysis, machine learning, and business intelligence",
+      description: "Data analysis, machine learning and business intelligence",
       skills: [
         { name: "Machine Learning", level: 85, years: 2, projects: 2 },
         { name: "Data Analytics", level: 88, years: 3, projects: 4 },
@@ -245,7 +245,7 @@ export default function SkillsPage() {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4">Continuous Learning</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Technology evolves rapidly, and I'm committed to staying current with the latest 
+            Technology evolves rapidly and I'm committed to staying current with the latest 
             developments and best practices in software development.
           </p>
         </div>

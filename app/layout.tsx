@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     url: "https://your-domain.com",
     siteName: "Project Portfolio Blog",
     title: "Project Portfolio Blog",
-    description: "A showcase of my projects, technical skills, and development journey",
+    description: "A showcase of my projects, technical skills and development journey",
   },
   twitter: {
     card: "summary_large_image",
     title: "Project Portfolio Blog",
-    description: "A showcase of my projects, technical skills, and development journey",
+    description: "A showcase of my projects, technical skills and development journey",
   },
 };
 

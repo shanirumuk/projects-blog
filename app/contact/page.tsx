@@ -69,8 +69,6 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold mb-4">Let's Work Together</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           I'm always excited to collaborate on new projects and challenges. 
-          Whether you're looking to hire, need consultation, or just want to chat about technology, 
-          I'd love to hear from you.
         </p>
       </div>
 
@@ -81,7 +79,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle className="text-2xl">Send Me a Message</CardTitle>
               <p className="text-muted-foreground">
-                Fill out the form below and I'll get back to you within 24 hours.
+                Fill out the form below and I'll get back to you as soon as possible.
               </p>
             </CardHeader>
             <CardContent>
@@ -147,7 +145,7 @@ export default function ContactPage() {
                   </label>
                   <Textarea 
                     id="message" 
-                    placeholder="Tell me about your project, goals, and any specific requirements..."
+                    placeholder="Tell me about your project/company, goals and any specific requirements..."
                     className="min-h-[120px]"
                     required 
                   />
@@ -246,7 +244,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Data management, software engineering, system integration, and web development projects.
+                Data management, software engineering, system integration and web development projects.
               </p>
             </CardContent>
           </Card>

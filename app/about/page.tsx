@@ -9,7 +9,7 @@ import { Download, Mail, MapPin, Calendar, Briefcase, GraduationCap, Award } fro
 
 export const metadata: Metadata = {
   title: "About Me",
-  description: "Data Management and Software Engineer with expertise in full-stack development, data analytics, and system integration",
+  description: "Data Management and Software Engineer with expertise in full-stack development, data analytics and system integration",
 };
 
 export default function AboutPage() {
@@ -76,7 +76,7 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold mb-4">About Me</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Data Management and Software Engineer with expertise in full-stack development, 
-          data analytics, and system integration.
+          data analytics and system integration.
         </p>
       </div>
 
@@ -325,7 +325,7 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold mb-4">Let's Build Something Amazing Together</h2>
         <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
           I'm always interested in new opportunities and collaborations in data management, 
-          software engineering, and system integration. Whether you have a project in mind or 
+          software engineering and system integration. Whether you have a project in mind or 
           just want to connect, I'd love to hear from you.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
