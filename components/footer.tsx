@@ -15,7 +15,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-semibold">Shanise Ruvimbo Mukwashi</h3>
               <p className="text-sm text-muted-foreground mt-2">
-                Data Management and Software Engineer with expertise in full-stack development, 
+                Data Management and Software Engineer with experience in full-stack development, 
                 data analytics, and system integration.
               </p>
             </div>

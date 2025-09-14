@@ -1,10 +1,10 @@
 export const weatherForecastApp = {
   id: "weather-forecast-app",
   title: "Weather Forecast Mobile Application",
-  description: "A responsive weather application with real-time forecasts, location services, and interactive features built for mobile devices using Dart and Android Studio",
-  longDescription: `A comprehensive weather application developed as part of a university group project in 2024. The app provides users with current weather conditions, detailed forecasts, and location-based weather updates through an intuitive mobile interface.
+  description: "A responsive weather application with real-time forecasts, location services and interactive features built for mobile devices using Dart and Android Studio",
+  longDescription: `A comprehensive weather application developed as part of a university group project in 2024. The app provides users with current weather conditions, detailed forecasts and location-based weather updates through an intuitive mobile interface.
 
-As the main developer on this project, I was responsible for the core functionality, API integration, and responsive design implementation. The application features real-time weather data, multiple forecast views, and a carousel interface for browsing different cities. The project showcased modern mobile development practices using Dart and Android Studio with a focus on native Android performance.`,
+As the main developer on this project, I was responsible for the core functionality, API integration and responsive design implementation. The application features real-time weather data, multiple forecast views and a carousel interface for browsing different cities. The project showcased modern mobile development practices using Dart and Android Studio with a focus on native Android performance.`,
 
   // Basic info
   category: "mobile",
@@ -57,7 +57,7 @@ As the main developer on this project, I was responsible for the core functional
   techDetails: {
     frontend: "Built with Dart and Flutter framework using Android Studio as the primary IDE. Implemented Material Design components for native Android look and feel. Used Flutter widgets for responsive layouts and smooth animations across different screen sizes.",
     
-    backend: "Integrated with external weather APIs using Dart's HTTP package to fetch real-time weather data, forecasts, and location-based information. Implemented JSON serialization and state management using Flutter's built-in state management solutions.",
+    backend: "Integrated with external weather APIs using Dart's HTTP package to fetch real-time weather data, forecasts and location-based information. Implemented JSON serialization and state management using Flutter's built-in state management solutions.",
     
     deployment: "Developed as a native Android application with focus on performance optimization and platform-specific features. Implemented proper Android lifecycle management and memory optimization.",
     

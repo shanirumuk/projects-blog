@@ -9,7 +9,7 @@ During the development phase, I engaged in detailed discussions with SupportYour
   tags: ["Zammad API", "Support Systems", "Customer Service", "API Integration", "Chatbot Planning"],
   category: "api",
   featured: false,
-  status: "in-progress",
+  status: "paused",
   year: "2025",
   duration: "2 weeks",
   challenges: [
@@ -37,7 +37,7 @@ During the development phase, I engaged in detailed discussions with SupportYour
   ],
   techDetails: {
     frontend: "Frontend architecture planned for support dashboard interface with real-time ticket updates and agent management capabilities",
-    backend: "Zammad API integration layer with custom endpoints for enhanced functionality, webhook processing for real-time updates, and planned integration points for chatbot services",
+    backend: "Zammad API integration layer with custom endpoints for enhanced functionality, webhook processing for real-time updates and planned integration points for chatbot services",
     deployment: "Deployment strategy designed for scalable support system hosting with considerations for high availability and real-time communication requirements",
     testing: "API integration testing framework planned with comprehensive endpoint coverage and mock support scenarios for various customer interaction flows"
   },

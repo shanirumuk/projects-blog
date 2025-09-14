@@ -16,9 +16,9 @@ The research began at Rosh Pinah Academy in Namibia, where I discovered that 64%
     "Obtaining ethical approval and permissions from multiple schools and medical professionals across two countries",
     "Developing standardized measurement protocols that could be replicated consistently across different locations",
     "Managing cultural and linguistic differences while conducting research in both Namibian and South African school systems",
-    "Analyzing complex correlational data to identify meaningful relationships between age, height, weight, and backpack loading",
-    "Designing a practical, low-cost solution that could be manufactured and distributed to students in need",
-    "Balancing academic rigor with accessibility for younger students and teachers to understand the research findings"
+    "Analyzing complex correlational data to identify meaningful relationships between age, height, weight and backpack loading",
+    "Designing a practical,low-cost solution that could be manufactured and distributed to students in need",
+    "Balancing academic standards with accessibility for younger students and teachers to understand the research findings"
   ],
   learnings: [
     "Advanced statistical analysis techniques including correlation coefficient calculations and data visualization",
@@ -31,7 +31,7 @@ The research began at Rosh Pinah Academy in Namibia, where I discovered that 64%
   ],
   features: [
     "Comprehensive data collection from 109 students across two countries (67 from Rosh Pinah Academy, 42 from Aggeneys International Academy)",
-    "Statistical correlation analysis revealing relationships between age, height, weight, and backpack loading",
+    "Statistical correlation analysis revealing relationships between age, height, weight and backpack loading",
     "Medical professional interviews documenting real health impacts on children",
     "Comparative analysis between Namibian and South African school populations",
     "Teacher awareness survey revealing gaps in understanding of backpack-related health risks",
@@ -41,9 +41,9 @@ The research began at Rosh Pinah Academy in Namibia, where I discovered that 64%
   ],
   techDetails: {
     methodology: "Mixed-methods approach combining quantitative measurements with qualitative interviews. Used stratified random sampling across grades 1-7, with spring balance scales calibrated to 10kg standards and standardized data collection sheets.",
-    dataAnalysis: "Statistical analysis using Microsoft Excel for correlation matrices, percentage calculations, and graphical data visualization. Implemented the 10% US Standard benchmark for backpack weight-to-body weight ratios.",
+    dataAnalysis: "Statistical analysis using Microsoft Excel for correlation matrices, percentage calculations and graphical data visualization. Implemented the 10% US Standard benchmark for backpack weight-to-body weight ratios.",
     prototyping: "Iterative design process testing foam vs. canvas materials, incorporating physiotherapist feedback for ergonomic improvements and waist strap adjustments for better weight distribution.",
-    validation: "Multi-stakeholder validation including medical professional interviews, student preference testing, and technical review by qualified physiotherapists to ensure safety and effectiveness."
+    validation: "Multi-stakeholder validation including medical professional interviews, student preference testing and technical review by qualified physiotherapists to ensure safety and effectiveness."
   },
   achievements: [
     "Gold medal at Namibian regional science fair (2016)",
@@ -60,7 +60,7 @@ The research began at Rosh Pinah Academy in Namibia, where I discovered that 64%
     "Girls recorded higher average backpack loading (12.07%) compared to boys (10.04%)",
     "Strong positive correlation (0.60-0.87) between age and ability to carry heavier loads",
     "Weak correlation between body weight/height and actual backpack weight, indicating systematic overloading",
-    "Medical professionals confirmed increasing cases of back, neck, and shoulder pain in children as young as 11",
+    "Medical professionals confirmed increasing cases of back, neck and shoulder pain in children as young as 11",
     "Teachers aware of risks but lacking knowledge of prevention strategies or policy frameworks",
     "Canvas-padded prototype preferred by 65% of students for comfort and postural support"
   ],
